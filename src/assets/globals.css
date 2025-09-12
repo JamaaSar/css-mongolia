@@ -23,8 +23,7 @@
 body {
     font-family: var(--roboto);
     color: var(--text-color);
-
-    /* default font */
+    width: 100%;
 }
 
 .roboto {
@@ -55,8 +54,7 @@ h1 {
 }
 
 .css-container {
-    margin: 0 auto;
-
+    margin: auto;
 
 }
 
@@ -74,9 +72,30 @@ h1 {
     }
 }
 
-@media (max-width: 798px) {
+@media (max-width: 760px) {
     .css-container {
         width: 370px;
+
+    }
+}
+
+@media (max-width: 1550px) {
+    .css-home-container {
+        width: 1142px;
+
+    }
+}
+
+@media (max-width: 1220px) {
+    .css-home-container {
+        width: 756px;
+
+    }
+}
+
+@media (max-width: 760px) {
+    .css-home-container {
+        width: 90%;
 
     }
 }

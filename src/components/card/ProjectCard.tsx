@@ -26,7 +26,7 @@ export const ProjectCard = ({
 
   return (
     <div
-      className="w-[370px] rounded-md overflow-hidden shadow-lg cursor-pointer"
+      className="w-[370px] min-w-[370px] rounded-md overflow-hidden shadow-lg cursor-pointer"
       onClick={onCardClick}
     >
       <div className="relative">

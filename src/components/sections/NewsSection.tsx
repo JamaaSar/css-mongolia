@@ -5,6 +5,7 @@ import { NewsCard } from "../card/NewsCard";
 import { H2 } from "../generic/Typography";
 import { useLocale, useTranslations } from "next-intl";
 import { News } from "graphql/generated";
+import { useMediaQuery } from "react-responsive";
 
 export const NewsSection = ({
   title,
@@ -15,11 +16,19 @@ export const NewsSection = ({
 }) => {
   const locale = useLocale();
   const t = useTranslations();
-
+  const isTablet = useMediaQuery({ maxWidth: 1024 });
+  const isMobile = useMediaQuery({ maxWidth: 620 });
+  const sliceNumber = isTablet ? 0 : 1;
   const filteredNews = news.filter((item) => {
     const lang = item.newsCustomFields.newsLanguage;
     return lang === "both" || lang === locale;
   });
+  const lenght = isTablet
+    ? 4
+    : filteredNews.length == 6
+    ? 6
+    : filteredNews.length;
+  console.log(lenght);
   const extraButton = {
     title: t("see-more"),
     url: "/news",
@@ -31,79 +40,81 @@ export const NewsSection = ({
       <div
         className="grid grid-cols-3 grid-rows-2 gap-4"
         style={{
-          gridTemplateColumns: "1fr 1fr 1fr",
+          gridTemplateColumns: `${isTablet ? "1fr 1fr " : "1fr 1fr 1fr"}`,
           gridTemplateRows: "270px repeat(1, 270px)",
         }}
       >
-        {filteredNews[0] && (
-          <div className="col-span-1 row-span-2">
+        {filteredNews.slice(0, sliceNumber).map((data: News, index: number) => (
+          <div key={data.databaseId + index} className="col-span-1 row-span-2">
             <NewsCard
-              key={filteredNews[0].id}
-              id={filteredNews[0].databaseId}
-              slug={filteredNews[0].slug}
-              date={filteredNews[0].dateGmt}
+              id={data.databaseId}
+              slug={data.slug}
+              date={data.dateGmt}
               title={getTranslated(
                 locale,
-                filteredNews[0].newsCustomFields.titleMn,
-                filteredNews[0].newsCustomFields.title
+                data.newsCustomFields.titleMn,
+                data.newsCustomFields.title
               )}
               excerpt={getTranslated(
                 locale,
-                filteredNews[0].newsCustomFields.excerptMn,
-                filteredNews[0].newsCustomFields.excerpt
+                data.newsCustomFields.excerptMn,
+                data.newsCustomFields.excerpt
               )}
               featuredImage={
-                filteredNews[0].newsCustomFields.featuredImage.node.mediaDetails
+                data.newsCustomFields.featuredImage?.node?.mediaDetails
                   .sizes !== null
-                  ? filteredNews[0].newsCustomFields.featuredImage?.node
-                      .mediaDetails?.sizes[0].sourceUrl
+                  ? data.newsCustomFields.featuredImage.node?.mediaDetails
+                      ?.sizes[0].sourceUrl
                   : ""
               }
-              newsContentType={filteredNews[0].newsCustomFields.newsContentType}
-              newsLanguage={filteredNews[0].newsCustomFields.newsLanguage}
-              sourceLink={filteredNews[0].newsCustomFields.sourceLink}
+              newsContentType={data.newsCustomFields.newsContentType}
+              newsLanguage={data.newsCustomFields.newsLanguage}
+              sourceLink={data.newsCustomFields.sourceLink}
               sourceName={getTranslated(
                 locale,
-                filteredNews[0].newsCustomFields.sourceNameMn,
-                filteredNews[0].newsCustomFields.sourceName
+                data.newsCustomFields.sourceNameMn,
+                data.newsCustomFields.sourceName
               )}
               customSize="h-full"
             />
           </div>
-        )}
-        {filteredNews.map((data: News, index: number) => (
-          <NewsCard
-            key={data.databaseId + index}
-            id={data.databaseId}
-            slug={data.slug}
-            date={data.dateGmt}
-            title={getTranslated(
-              locale,
-              data.newsCustomFields.titleMn,
-              data.newsCustomFields.title
-            )}
-            excerpt={getTranslated(
-              locale,
-              data.newsCustomFields.excerptMn,
-              data.newsCustomFields.excerpt
-            )}
-            featuredImage={
-              data.newsCustomFields.featuredImage?.node?.mediaDetails.sizes !==
-              null
-                ? data.newsCustomFields.featuredImage.node?.mediaDetails
-                    ?.sizes[0].sourceUrl
-                : ""
-            }
-            newsContentType={data.newsCustomFields.newsContentType}
-            newsLanguage={data.newsCustomFields.newsLanguage}
-            sourceLink={data.newsCustomFields.sourceLink}
-            sourceName={getTranslated(
-              locale,
-              data.newsCustomFields.sourceNameMn,
-              data.newsCustomFields.sourceName
-            )}
-          />
         ))}
+
+        {filteredNews
+          .slice(sliceNumber, lenght)
+          .map((data: News, index: number) => (
+            <NewsCard
+              key={data.databaseId + index}
+              id={data.databaseId}
+              slug={data.slug}
+              date={data.dateGmt}
+              title={getTranslated(
+                locale,
+                data.newsCustomFields.titleMn,
+                data.newsCustomFields.title
+              )}
+              excerpt={getTranslated(
+                locale,
+                data.newsCustomFields.excerptMn,
+                data.newsCustomFields.excerpt
+              )}
+              featuredImage={
+                data.newsCustomFields.featuredImage?.node?.mediaDetails
+                  .sizes !== null
+                  ? data.newsCustomFields.featuredImage.node?.mediaDetails
+                      ?.sizes[0].sourceUrl
+                  : ""
+              }
+              newsContentType={data.newsCustomFields.newsContentType}
+              newsLanguage={data.newsCustomFields.newsLanguage}
+              sourceLink={data.newsCustomFields.sourceLink}
+              sourceName={getTranslated(
+                locale,
+                data.newsCustomFields.sourceNameMn,
+                data.newsCustomFields.sourceName
+              )}
+            />
+          ))}
       </div>
     </div>
   );

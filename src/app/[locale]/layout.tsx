@@ -26,22 +26,21 @@ const roboto = Roboto({
 });
 
 export default async function LocaleLayout({ children, params }) {
-  // Attendre le paramètre `params` avant de l'utiliser
   const { locale } = await params;
 
-  // Vérifier si la locale est valide
   if (!routing.locales.includes(locale)) {
     notFound();
   }
 
-  // Définir la locale pour la requête
   setRequestLocale(locale);
 
-  // Charger les messages pour la locale
   const messages = await getMessages();
 
   return (
     <html lang={locale} className={`${rubik.variable} ${roboto.variable}`}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <NextIntlClientProvider messages={messages}>
         <body>
           <Header locale={locale} />

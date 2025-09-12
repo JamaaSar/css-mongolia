@@ -1,20 +1,18 @@
-import { getNewsFull } from "@/lib/graphql-api/queries/news";
-import { NewsIdType } from "graphql/generated";
+// src/app/[locale]/page.js
+import { ProjectIdType } from "graphql/generated";
 import { H2 } from "@/components/generic/Typography";
 import { getTranslated } from "@/lib/getTranslated";
 import { CalendarDateRangeIcon } from "@heroicons/react/24/solid";
 import { formatDate } from "@/lib/formatDate";
+import { getProjectFull } from "@/lib/graphql-api/queries/project";
 
-export default async function NewsPostPage({ params }) {
+export default async function ProjectPostPage({ params }) {
   const { slug, locale } = await params;
   const isPostId = slug.match(/^[0-9]+$/);
 
-  console.log("isPostId", isPostId);
-  console.log("slug", slug);
-
-  const post = await getNewsFull(
+  const post = await getProjectFull(
     slug,
-    isPostId ? NewsIdType.DatabaseId : NewsIdType.Slug
+    isPostId ? ProjectIdType.DatabaseId : ProjectIdType.Slug
   );
 
   return (
@@ -23,14 +21,7 @@ export default async function NewsPostPage({ params }) {
         {/* <BreadCrumb breadCrumbItems={breadCrumbItems} /> */}
         <div className="css-container 2xl:container m-auto">
           <div className="article_news">
-            <H2
-              className="uppercase"
-              title={getTranslated(
-                locale,
-                post?.newsCustomFields.titleMn,
-                post?.newsCustomFields.title
-              )}
-            />
+            <H2 className="uppercase" title={post.title} />
             <div className="subSection">
               <div className="authorsSection">
                 {/* {post?.authors && (
@@ -55,8 +46,8 @@ export default async function NewsPostPage({ params }) {
               dangerouslySetInnerHTML={{
                 __html: getTranslated(
                   locale,
-                  post.newsCustomFields.bodyMn,
-                  post.newsCustomFields.body
+                  post.projectCustomFields.bodyMn,
+                  post.projectCustomFields.body
                 ),
               }}
             ></div>

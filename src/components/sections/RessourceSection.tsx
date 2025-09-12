@@ -5,13 +5,14 @@ import { H2 } from "../generic/Typography";
 import { useLocale, useTranslations } from "next-intl";
 import { RessourceCard } from "../card/RessourceCard";
 import { Carousel } from "../generic/Carousel";
+import { Resource } from "graphql/generated";
 
 export const RessourceSection = ({
   title,
   ressources,
 }: {
   title: string;
-  ressources: [];
+  ressources: Resource[];
 }) => {
   const locale = useLocale();
   const t = useTranslations();

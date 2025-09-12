@@ -1,9 +1,6 @@
 export const SOCIAL_URLS = {
-  FACEBOOK: "https://www.facebook.com/breathemongolia/",
-  INSTAGRAM: "https://www.instagram.com/breathemongolia/?hl=en",
-  SLACK:
-    "https://join.slack.com/t/agaar-neg/shared_invite/zt-ic3cds93-osVIU6dxhUU8wEtrojGvuA",
-  TWITTER: "https://twitter.com/breathemongolia",
-  LINKEDIN: "https://www.linkedin.com/company/breathe-mongolia/",
-  YOUTUBE: "https://www.youtube.com/channel/UCra9L7rdQu4lmYDvVyICNDQ",
+  FACEBOOK: "https://www.facebook.com/cssmongol/",
+  LINKEDIN:
+    "https://www.linkedin.com/company/council-for-sustainable-development-and-social-responsibility/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BWvrYvyPRSzG3wT3FUjp00Q%3D%3D",
+  YOUTUBE: "https://www.youtube.com/@cssmongolia",
 };

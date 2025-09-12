@@ -16,8 +16,8 @@ const socialUrls: string[] = [
 
 export const Footer = ({ locale }) => {
   return (
-    <div className="w-full flex border-t-30 border-primary p1-20 mt-20 pb-5 bottom-0 bg-inherit h-[320px] bg-[#F6F7F9]! ">
-      <div className="flex gap-28 mx-auto items-center">
+    <div className="w-full border-t-30 border-primary p-20 mt-20 pb-5 bottom-0 bg-inherit  h-[620px] sm:h-[320px] bg-[#F6F7F9]! m-auto">
+      <div className="flex flex-col sm:flex-row gap-10 sm:gap-28 mx-auto sm:items-center m-auto sm:content-center justify-center">
         <div className="flex flex-col gap-4">
           <Image
             src={logo.src}

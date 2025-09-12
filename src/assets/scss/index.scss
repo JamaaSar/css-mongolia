@@ -2,6 +2,14 @@ html,
 body {
   margin: 0;
   background: linear-gradient(135deg, #ffff 0%, #cde1f0 100%);
+  width: 100%;
+}
+html,
+body,
+#__next {
+  margin: 0;
+  padding: 0;
+  min-width: 100vh;
 }
 
 .embla__viewport {
@@ -41,10 +49,16 @@ body {
   height: 630px;
   margin: auto;
   min-width: 100%;
-
+  width: 100vh;
+  object-fit: cover;
   --slide-height: 19rem;
   --slide-spacing: 0rem;
   --slide-size: 100%;
+}
+@media (max-width: 640px) {
+  .embla-banner {
+    display: none;
+  }
 }
 
 // Pagination Component
@@ -252,4 +266,44 @@ body {
       }
     }
   }
+}
+
+.strategyBody {
+  font-size: 18px;
+}
+
+.strategyBody ul {
+  padding-left: 20px;
+  list-style-type: none;
+}
+
+.strategyBody ul li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+.strategyBody ul li:last-child {
+  margin-bottom: 0;
+}
+.strategyBody.colored ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+}
+.strategyBody ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
 }

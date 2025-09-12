@@ -5,10 +5,8 @@ import { NewsCard } from "../../../components/card/NewsCard";
 import Pagination from "@/components/generic/Pagination";
 import { getTranslated } from "@/lib/getTranslated";
 import { News } from "graphql/generated";
-import { useMediaQuery } from "react-responsive";
 
 export default function NewsPage({ news, locale }) {
-  const is2xl = useMediaQuery({ minWidth: 1550 });
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 12;
 

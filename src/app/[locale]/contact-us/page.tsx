@@ -1,51 +1,21 @@
-// src/app/[locale]/page.js
-import { NewsCard } from "../../../components/card/NewsCard";
-import {
-  getNewsLandingPageSettings,
-  getNewsPosts,
-} from "@/lib/graphql-api/queries/news";
+import { H2 } from "@/components/generic/Typography";
 import { getTranslated } from "@/lib/getTranslated";
-import { News, Project } from "graphql/generated";
-import { H2 } from "../../../components/generic/Typography";
-import { getProjects } from "@/lib/graphql-api/queries/project";
-import { ProjectCard } from "@/components/card/ProjectCard";
 
-export default async function NewsPage({ params }) {
+export default async function ContactUs({ params }) {
   const { locale } = await params;
 
-  const projects = await getProjects();
-  console.log(projects);
-  const setting = await getNewsLandingPageSettings();
-
   return (
-    <div className="css-container">
-      <H2
-        title={getTranslated(
-          locale,
-          setting.newsLandingPageTitleMn,
-          setting.newsLandingPageTitle
-        )}
-      />
-      <div className="flex gap-4 m-auto">
-        {projects.map((data: Project) => (
-          <ProjectCard
-            key={data.databaseId}
-            title={data.title}
-            excerpt={getTranslated(
-              locale,
-              data.projectCustomFields.excerptMn,
-              data.projectCustomFields.excerpt
-            )}
-            featuredImage={
-              data.projectCustomFields.featuredImage?.node?.mediaDetails
-                .sizes !== null
-                ? data.projectCustomFields.featuredImage.node?.mediaDetails
-                    ?.sizes[0].sourceUrl
-                : ""
-            }
-          />
-        ))}
-      </div>
+    <div className="css-container 2xl:container">
+      <H2 title={getTranslated(locale, "ХОЛБОО БАРИХ", "Contact us")} />
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10697.383497638712!2d106.90209694043344!3d47.910344710147285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d9693bffffffff7%3A0xdb1d5da94946cd57!2sMongolian%20Express!5e0!3m2!1sfr!2sfr!4v1757700180157!5m2!1sfr!2sfr"
+        width="600"
+        height="450"
+        style={{ border: 0 }}
+        allowFullScreen={true}
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
     </div>
   );
 }

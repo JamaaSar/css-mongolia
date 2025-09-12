@@ -12,6 +12,231 @@ export type Scalars = {
   Float: number;
 };
 
+/** The &quot;AboutUsPageSetting&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+export type AboutUsPageSetting = AboutUsPageSetting_Fields & AcfFieldGroup & AcfFieldGroupFields & {
+  __typename?: 'AboutUsPageSetting';
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSetting&quot; Field Group */
+  aboutUsExcerp?: Maybe<Scalars['String']>;
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSetting&quot; Field Group */
+  aboutUsExcerptMn?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSetting&quot; Field Group */
+  aboutUsTitle?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSetting&quot; Field Group */
+  aboutUsTitleMn?: Maybe<Scalars['String']>;
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;AboutUsPageSetting&quot; Field Group */
+  missionVisionValues?: Maybe<AboutUsPageSettingMissionVisionValues>;
+  /** Field of the &quot;repeater&quot; Field Type added to the schema as part of the &quot;AboutUsPageSetting&quot; Field Group */
+  strategy?: Maybe<Array<Maybe<AboutUsPageSettingStrategy>>>;
+};
+
+/** The &quot;AboutUsPageSettingMissionVisionValues&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+export type AboutUsPageSettingMissionVisionValues = AboutUsPageSettingMissionVisionValues_Fields & AcfFieldGroup & AcfFieldGroupFields & {
+  __typename?: 'AboutUsPageSettingMissionVisionValues';
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValues&quot; Field Group */
+  mission?: Maybe<AboutUsPageSettingMissionVisionValuesMission>;
+  /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValues&quot; Field Group */
+  values?: Maybe<AboutUsPageSettingMissionVisionValuesValues>;
+  /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValues&quot; Field Group */
+  vision?: Maybe<AboutUsPageSettingMissionVisionValuesVision>;
+};
+
+/** The &quot;AboutUsPageSettingMissionVisionValuesMission&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+export type AboutUsPageSettingMissionVisionValuesMission = AboutUsPageSettingMissionVisionValuesMission_Fields & AcfFieldGroup & AcfFieldGroupFields & {
+  __typename?: 'AboutUsPageSettingMissionVisionValuesMission';
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesMission&quot; Field Group */
+  excerpt?: Maybe<Scalars['String']>;
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesMission&quot; Field Group */
+  excerptMn?: Maybe<Scalars['String']>;
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesMission&quot; Field Group */
+  title?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesMission&quot; Field Group */
+  titleMn?: Maybe<Scalars['String']>;
+};
+
+/** Interface representing fields of the ACF &quot;AboutUsPageSettingMissionVisionValuesMission&quot; Field Group */
+export type AboutUsPageSettingMissionVisionValuesMission_Fields = {
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesMission&quot; Field Group */
+  excerpt?: Maybe<Scalars['String']>;
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesMission&quot; Field Group */
+  excerptMn?: Maybe<Scalars['String']>;
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesMission&quot; Field Group */
+  title?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesMission&quot; Field Group */
+  titleMn?: Maybe<Scalars['String']>;
+};
+
+/** The &quot;AboutUsPageSettingMissionVisionValuesValues&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+export type AboutUsPageSettingMissionVisionValuesValues = AboutUsPageSettingMissionVisionValuesValues_Fields & AcfFieldGroup & AcfFieldGroupFields & {
+  __typename?: 'AboutUsPageSettingMissionVisionValuesValues';
+  /** Field of the &quot;wysiwyg&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesValues&quot; Field Group */
+  excerpt?: Maybe<Scalars['String']>;
+  /** Field of the &quot;wysiwyg&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesValues&quot; Field Group */
+  excerptMn?: Maybe<Scalars['String']>;
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesValues&quot; Field Group */
+  title?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesValues&quot; Field Group */
+  titleMn?: Maybe<Scalars['String']>;
+};
+
+/** Interface representing fields of the ACF &quot;AboutUsPageSettingMissionVisionValuesValues&quot; Field Group */
+export type AboutUsPageSettingMissionVisionValuesValues_Fields = {
+  /** Field of the &quot;wysiwyg&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesValues&quot; Field Group */
+  excerpt?: Maybe<Scalars['String']>;
+  /** Field of the &quot;wysiwyg&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesValues&quot; Field Group */
+  excerptMn?: Maybe<Scalars['String']>;
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesValues&quot; Field Group */
+  title?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesValues&quot; Field Group */
+  titleMn?: Maybe<Scalars['String']>;
+};
+
+/** The &quot;AboutUsPageSettingMissionVisionValuesVision&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+export type AboutUsPageSettingMissionVisionValuesVision = AboutUsPageSettingMissionVisionValuesVision_Fields & AcfFieldGroup & AcfFieldGroupFields & {
+  __typename?: 'AboutUsPageSettingMissionVisionValuesVision';
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesVision&quot; Field Group */
+  excerpt?: Maybe<Scalars['String']>;
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesVision&quot; Field Group */
+  excerptMn?: Maybe<Scalars['String']>;
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesVision&quot; Field Group */
+  title?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesVision&quot; Field Group */
+  titleMn?: Maybe<Scalars['String']>;
+};
+
+/** Interface representing fields of the ACF &quot;AboutUsPageSettingMissionVisionValuesVision&quot; Field Group */
+export type AboutUsPageSettingMissionVisionValuesVision_Fields = {
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesVision&quot; Field Group */
+  excerpt?: Maybe<Scalars['String']>;
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesVision&quot; Field Group */
+  excerptMn?: Maybe<Scalars['String']>;
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesVision&quot; Field Group */
+  title?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValuesVision&quot; Field Group */
+  titleMn?: Maybe<Scalars['String']>;
+};
+
+/** Interface representing fields of the ACF &quot;AboutUsPageSettingMissionVisionValues&quot; Field Group */
+export type AboutUsPageSettingMissionVisionValues_Fields = {
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValues&quot; Field Group */
+  mission?: Maybe<AboutUsPageSettingMissionVisionValuesMission>;
+  /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValues&quot; Field Group */
+  values?: Maybe<AboutUsPageSettingMissionVisionValuesValues>;
+  /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMissionVisionValues&quot; Field Group */
+  vision?: Maybe<AboutUsPageSettingMissionVisionValuesVision>;
+};
+
+/** The &quot;AboutUsPageSettingStrategy&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+export type AboutUsPageSettingStrategy = AboutUsPageSettingStrategy_Fields & AcfFieldGroup & AcfFieldGroupFields & {
+  __typename?: 'AboutUsPageSettingStrategy';
+  /** Field of the &quot;wysiwyg&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingStrategy&quot; Field Group */
+  excerpt?: Maybe<Scalars['String']>;
+  /** Field of the &quot;wysiwyg&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingStrategy&quot; Field Group */
+  excerptMn?: Maybe<Scalars['String']>;
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingStrategy&quot; Field Group */
+  title?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingStrategy&quot; Field Group */
+  titleMn?: Maybe<Scalars['String']>;
+};
+
+/** Interface representing fields of the ACF &quot;AboutUsPageSettingStrategy&quot; Field Group */
+export type AboutUsPageSettingStrategy_Fields = {
+  /** Field of the &quot;wysiwyg&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingStrategy&quot; Field Group */
+  excerpt?: Maybe<Scalars['String']>;
+  /** Field of the &quot;wysiwyg&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingStrategy&quot; Field Group */
+  excerptMn?: Maybe<Scalars['String']>;
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingStrategy&quot; Field Group */
+  title?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingStrategy&quot; Field Group */
+  titleMn?: Maybe<Scalars['String']>;
+};
+
+/** Interface representing fields of the ACF &quot;AboutUsPageSetting&quot; Field Group */
+export type AboutUsPageSetting_Fields = {
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSetting&quot; Field Group */
+  aboutUsExcerp?: Maybe<Scalars['String']>;
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSetting&quot; Field Group */
+  aboutUsExcerptMn?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSetting&quot; Field Group */
+  aboutUsTitle?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSetting&quot; Field Group */
+  aboutUsTitleMn?: Maybe<Scalars['String']>;
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;AboutUsPageSetting&quot; Field Group */
+  missionVisionValues?: Maybe<AboutUsPageSettingMissionVisionValues>;
+  /** Field of the &quot;repeater&quot; Field Type added to the schema as part of the &quot;AboutUsPageSetting&quot; Field Group */
+  strategy?: Maybe<Array<Maybe<AboutUsPageSettingStrategy>>>;
+};
+
+export type AboutUsPageSettings = AcfOptionsPage & Node & WithAcfAboutUsPageSetting & {
+  __typename?: 'AboutUsPageSettings';
+  /** Fields of the AboutUsPageSetting ACF Field Group */
+  aboutUsPageSetting?: Maybe<AboutUsPageSetting>;
+  /** The globally unique ID for the object */
+  id: Scalars['ID'];
+  menuTitle?: Maybe<Scalars['String']>;
+  pageTitle?: Maybe<Scalars['String']>;
+  parentId?: Maybe<Scalars['String']>;
+};
+
 /** Connection between the HomePageSettingNewsSection_Fields type and the ContentNode type */
 export type AcfContentNodeConnection = Connection & ContentNodeConnection & {
   __typename?: 'AcfContentNodeConnection';
@@ -7600,8 +7825,9 @@ export type RootMutationUpdateUserArgs = {
 };
 
 /** The root entry point into the Graph */
-export type RootQuery = WithAcfOptionsPageHomePageSettings & WithAcfOptionsPagePageSettings & {
+export type RootQuery = WithAcfOptionsPageAboutUsPageSettings & WithAcfOptionsPageHomePageSettings & WithAcfOptionsPagePageSettings & {
   __typename?: 'RootQuery';
+  aboutUsPageSettings?: Maybe<AboutUsPageSettings>;
   /** Entry point to get all settings for the site */
   allSettings?: Maybe<Settings>;
   /** Connection between the RootQuery type and the category type */
@@ -11764,6 +11990,12 @@ export type WpPageInfo = {
   startCursor?: Maybe<Scalars['String']>;
 };
 
+/** Provides access to fields of the &quot;AboutUsPageSetting&quot; ACF Field Group via the &quot;aboutUsPageSetting&quot; field */
+export type WithAcfAboutUsPageSetting = {
+  /** Fields of the AboutUsPageSetting ACF Field Group */
+  aboutUsPageSetting?: Maybe<AboutUsPageSetting>;
+};
+
 /** Provides access to fields of the &quot;HomePageSetting&quot; ACF Field Group via the &quot;homePageSetting&quot; field */
 export type WithAcfHomePageSetting = {
   /** Fields of the HomePageSetting ACF Field Group */
@@ -11780,6 +12012,11 @@ export type WithAcfNewsCustomFields = {
 export type WithAcfNewsPageSetting = {
   /** Fields of the NewsPageSetting ACF Field Group */
   newsPageSetting?: Maybe<NewsPageSetting>;
+};
+
+/** Access point for the &quot;AboutUsPageSettings&quot; ACF Options Page */
+export type WithAcfOptionsPageAboutUsPageSettings = {
+  aboutUsPageSettings?: Maybe<AboutUsPageSettings>;
 };
 
 /** Access point for the &quot;HomePageSettings&quot; ACF Options Page */

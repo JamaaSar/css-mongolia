@@ -1,12 +1,7 @@
 "use client";
 
-import {
-  ArrowTopRightOnSquareIcon,
-  CalendarDateRangeIcon,
-  CalendarIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/24/solid";
-import { useEffect, useState } from "react";
+import { CalendarDateRangeIcon } from "@heroicons/react/24/solid";
+import { useState } from "react";
 
 export const RessourceCard = ({
   title,

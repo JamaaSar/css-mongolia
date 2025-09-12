@@ -1,10 +1,10 @@
 import { Banner } from "@/components/generic/banner/Banner";
 import { NewsSection } from "@/components/sections/NewsSection";
 import { ProjectSection } from "@/components/sections/ProjectSection";
-import { RessourceSection } from "@/components/sections/RessourceSection";
 import { getTranslated } from "@/lib/getTranslated";
 import { getHomePage } from "@/lib/graphql-api/queries/home";
 import { News, Project } from "graphql/generated";
+import { useMediaQuery } from "react-responsive";
 
 export default async function HomePage({ params }) {
   const { locale } = await params;
@@ -16,7 +16,7 @@ export default async function HomePage({ params }) {
   return (
     <div>
       <Banner banners={data.banners} />
-      <div className="relative mt-[600px] container m-auto">
+      <div className="relative mt-10 sm:mt-[600px] css-home-container 2xl:container m-auto">
         <h1> {getTranslated(locale, data.titleMn, data.title)} </h1>
         <p className="excerpt">
           {getTranslated(locale, data.excerptMn, data.excerpt)}

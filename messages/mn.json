@@ -1,0 +1,16 @@
+{
+  "HomePage": {
+    "title": "Bienvenue sur mon site",
+    "subtitle": "Nous créons des choses incroyables!",
+    "website": "Mon Site"
+  },
+  "menu": {
+    "homepage": "НҮҮР ХУУДАС",
+    "newspage": "МЭДЭЭ",
+    "project": "ТӨСӨЛ",
+    "resource": "МЭДЛЭГИЙН САН",
+    "about-us": "БИДНИЙ ТУХАЙ",
+    "contact-us": "ХОЛБОО БАРИХ"
+  },
+  "see-more": "цааш үзэх"
+}

@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+.bg-primary {
+    background-color: var(--color-primary);
+    /* or use Tailwind's extended class */
+}
+
+.bg-secondary {
+    background-color: var(--color-secondary);
+    /* or use Tailwind's extended class */
+}
+
+.color-secondary {
+    color: var(--color-secondary);
+}
+
+.text-color {
+    color: var(--text-color);
+    /* or use Tailwind's extended class */
+}
+
+
+body {
+    font-family: var(--roboto);
+    color: var(--text-color);
+
+    /* default font */
+}
+
+.roboto {
+    font-family: var(--roboto);
+}
+
+.rubik {
+    font-family: var(--rubik);
+}
+
+@theme {
+    --text-color: oklch(0.137 0.031 264.4);
+    --color-primary: oklch(0.527 0.174 259.2);
+    --color-secondary: oklch(0.792 0.171 129.6)
+        /* ... */
+}
+
+h1 {
+    font-size: 32px;
+    font-family: var(--rubik);
+    font-weight: bold;
+}
+
+.excerpt {
+    font-size: 20px;
+    font-family: var(--robot);
+    padding-top: 20px;
+}
+
+.css-container {
+    margin: 0 auto;
+
+
+}
+
+@media (max-width: 1550px) {
+    .css-container {
+        width: 1142px;
+
+    }
+}
+
+@media (max-width: 1220px) {
+    .css-container {
+        width: 756px;
+
+    }
+}
+
+@media (max-width: 798px) {
+    .css-container {
+        width: 370px;
+
+    }
+}

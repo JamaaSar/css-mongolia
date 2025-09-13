@@ -9,7 +9,6 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 export const Navbar = ({ locale, footer = false }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
-  const path = pathname.toLowerCase();
   const t = useTranslations();
   const cleanedPath = pathname.replace(`/${locale}`, "") || "/";
   const isMobile = useMediaQuery({ maxWidth: 820 });
@@ -69,7 +68,9 @@ export const Navbar = ({ locale, footer = false }) => {
         }`}
           >
             {menuItems.map((item, i) => (
-              <MenuItem key={i} {...item} />
+              <div key={i} onClick={() => setMenuOpen(false)}>
+                <MenuItem {...item} />
+              </div>
             ))}
           </div>
         </>

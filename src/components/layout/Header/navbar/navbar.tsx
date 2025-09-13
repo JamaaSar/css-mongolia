@@ -44,7 +44,7 @@ export const Navbar = ({ locale, footer = false }) => {
   ];
 
   return (
-    <div className="uppercase text-sm text-color font-medium ">
+    <div className="uppercase text-sm text-color font-medium tracking-[1px] w-full ">
       {isMobile && !footer ? (
         <>
           <div
@@ -64,7 +64,7 @@ export const Navbar = ({ locale, footer = false }) => {
             className={`
         ${
           isMenuOpen
-            ? "-translate-x-100 bg-white w-full lg:hidden fixed py-10 flex flex-col gap-7 h-full z-30 px-10 uppercase text-lg tracking-widest transition-all ease-in-out duration-200 overflow-x-hidden"
+            ? "-translate-x-10 bg-white w-full lg:hidden fixed py-10 flex flex-col gap-7 h-full z-30 px-10 uppercase text-lg tracking-widest transition-all ease-in-out duration-200 overflow-x-hidden"
             : "-translate-x-full hidden"
         }`}
           >
@@ -77,7 +77,7 @@ export const Navbar = ({ locale, footer = false }) => {
         <div
           className={` ${
             footer
-              ? "h-[100px] flex flex-col justify-between gap-y-4 gap-x-20 flex-wrap w-[324px] flex-grow"
+              ? "flex flex-col justify-between gap-y-4 gap-x-20 sm:flex-wrap max-w-[324px]"
               : "flex gap-10 sm:gap-x-5 justify-end"
           } `}
         >

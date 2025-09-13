@@ -9,7 +9,7 @@ import { useMediaQuery } from "react-responsive";
 export const Header = ({ locale }) => {
   const isMobile = useMediaQuery({ maxWidth: 640 });
   return (
-    <div className="w-full absolute sticky top-0 z-50 flex flex-col gap-4 px-4 py-4 sm:justify-between sm:flex-row sm:gap-10 sm:px-10 items-center h-[140px] bg-white">
+    <div className="w-full absolute sticky top-0 z-50 flex flex-col gap-4 px-4 py-4 sm:justify-between sm:flex-row sm:gap-10 md:px-8 items-center h-[140px] bg-white">
       {isMobile ? (
         <>
           <div className="justify-end w-full">

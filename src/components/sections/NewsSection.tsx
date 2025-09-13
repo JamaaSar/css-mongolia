@@ -17,18 +17,19 @@ export const NewsSection = ({
   const locale = useLocale();
   const t = useTranslations();
   const isTablet = useMediaQuery({ maxWidth: 1024 });
-  const isMobile = useMediaQuery({ maxWidth: 620 });
+  const isMobile = useMediaQuery({ maxWidth: 520 });
   const sliceNumber = isTablet ? 0 : 1;
   const filteredNews = news.filter((item) => {
     const lang = item.newsCustomFields.newsLanguage;
     return lang === "both" || lang === locale;
   });
+
   const lenght = isTablet
     ? 4
     : filteredNews.length == 6
     ? 6
     : filteredNews.length;
-  console.log(lenght);
+
   const extraButton = {
     title: t("see-more"),
     url: "/news",
@@ -40,8 +41,12 @@ export const NewsSection = ({
       <div
         className="grid grid-cols-3 grid-rows-2 gap-4"
         style={{
-          gridTemplateColumns: `${isTablet ? "1fr 1fr " : "1fr 1fr 1fr"}`,
-          gridTemplateRows: "270px repeat(1, 270px)",
+          gridTemplateColumns: `${
+            isMobile ? "1fr" : isTablet ? "1fr 1fr " : "1fr 1fr 1fr"
+          }`,
+          gridTemplateRows: `${
+            isMobile ? "270px repeat(3, 270px)" : "270px repeat(1, 270px)"
+          }`,
         }}
       >
         {filteredNews.slice(0, sliceNumber).map((data: News, index: number) => (

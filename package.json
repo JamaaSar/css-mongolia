@@ -11,7 +11,7 @@
     "generate": "graphql-codegen"
   },
   "dependencies": {
-    "@headlessui/react": "^2.2.7",
+    "@headlessui/react": "^2.2.8",
     "@heroicons/react": "^2.0.13",
     "@tailwindcss/postcss": "^4.1.13",
     "classnames": "^2.3.1",

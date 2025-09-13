@@ -1,4 +1,5 @@
 import { Banner } from "@/components/generic/banner/Banner";
+import { H1 } from "@/components/generic/Typography/H1";
 import { NewsSection } from "@/components/sections/NewsSection";
 import { ProjectSection } from "@/components/sections/ProjectSection";
 import { getTranslated } from "@/lib/getTranslated";
@@ -17,10 +18,10 @@ export default async function HomePage({ params }) {
     <div>
       <Banner banners={data.banners} />
       <div className="relative mt-10 sm:mt-[600px] css-home-container 2xl:container m-auto">
-        <h1> {getTranslated(locale, data.titleMn, data.title)} </h1>
-        <p className="excerpt">
-          {getTranslated(locale, data.excerptMn, data.excerpt)}
-        </p>
+        <H1
+          title={getTranslated(locale, data.titleMn, data.title)}
+          descriptionHtml={getTranslated(locale, data.excerptMn, data.excerpt)}
+        />
         <NewsSection
           title={getTranslated(
             locale,

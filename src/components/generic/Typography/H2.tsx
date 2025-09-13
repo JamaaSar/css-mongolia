@@ -18,13 +18,13 @@ export const H2 = ({
 }) => {
   const ExtraButton = () => {
     return (
-      <div className="font-bold text-sm uppercase ">
+      <div className="font-bold text-xs md:text-sm uppercase">
         <Link
-          className="self-center flex gap-2 hover:text-m"
+          className="self-center flex  items-center gap-2 hover:text-m whitespace-nowrap "
           href={extraButton.url}
         >
           {extraButton.title}
-          <ArrowRightIcon className="h-6 w-6 text-primary" />
+          <ArrowRightIcon className="h-4 w-4 sm:h-6 sm:w-6 text-primary" />
         </Link>
       </div>
     );
@@ -33,7 +33,7 @@ export const H2 = ({
   return (
     <div className="mt-24 mb-8">
       <div className="flex gap-x-3 items-center justify-between">
-        <h2 className={`font-bold rubik text-4xl sm:text-3xl ${className} `}>
+        <h2 className={`font-bold rubik text-xl md:text-3xl ${className} `}>
           {title}
         </h2>
         {extraButton && <ExtraButton />}

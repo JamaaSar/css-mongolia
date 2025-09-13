@@ -7,6 +7,7 @@ import iso from "../../../assets/iso.png";
 import Image from "next/image";
 import { SOCIAL_URLS } from "@/lib/consts/urls";
 import { SocialIcon } from "react-social-icons";
+import { useMediaQuery } from "react-responsive";
 
 const socialUrls: string[] = [
   SOCIAL_URLS.FACEBOOK,
@@ -15,9 +16,16 @@ const socialUrls: string[] = [
 ];
 
 export const Footer = ({ locale }) => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   return (
     <div className="w-full border-t-30 border-primary p-20 mt-20 pb-5 bottom-0 bg-inherit  h-[620px] sm:h-[320px] bg-[#F6F7F9]! m-auto">
-      <div className="flex flex-col sm:flex-row gap-10 sm:gap-28 mx-auto sm:items-center m-auto sm:content-center justify-center">
+      <div
+        className={`flex mx-auto m-auto justify-center ${
+          isMobile
+            ? "flex-col gap-10"
+            : "flex-row gap-28 items-center content-center "
+        }`}
+      >
         <div className="flex flex-col gap-4">
           <Image
             src={logo.src}
@@ -36,7 +44,7 @@ export const Footer = ({ locale }) => {
         </div>
         <Navbar locale={locale} footer={true} />
         <div className="flex flex-col gap-8">
-          <p className="w-[440px]">
+          <p className="max-w-[440px] text-wrap">
             Монгол Улс, Улаанбаатар 15160, Чингэлтэй дүүрэг, 1-р хороо,
             Энхтайваны өргөн чөлөө-4, Экспресс Тауэр 701-2.
           </p>

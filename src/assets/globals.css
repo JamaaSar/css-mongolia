@@ -41,17 +41,17 @@ body {
         /* ... */
 }
 
-h1 {
+/* h1 {
     font-size: 32px;
     font-family: var(--rubik);
     font-weight: bold;
-}
+} */
 
-.excerpt {
+/* .excerpt {
     font-size: 20px;
     font-family: var(--robot);
     padding-top: 20px;
-}
+} */
 
 .css-container {
     margin: auto;

@@ -37,7 +37,7 @@ export const MenuItem = (props: MenuItemProps) => {
     >
       <div className="flex items-center justify-between text-sm">
         <Link
-          className={`hover:text-secondary font-medium  
+          className={`hover:text-secondary font-medium w-full
             ${props.isActive && " text-secondary"}`}
           href={props.href}
           target={props.target}

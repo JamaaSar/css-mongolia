@@ -3,19 +3,11 @@
 import { Navbar } from "../Header/navbar";
 import logo from "../../../assets/logo.png";
 import iso from "../../../assets/iso.png";
-
 import Image from "next/image";
-import { SOCIAL_URLS } from "@/lib/consts/urls";
 import { SocialIcon } from "react-social-icons";
 import { useMediaQuery } from "react-responsive";
 
-const socialUrls: string[] = [
-  SOCIAL_URLS.FACEBOOK,
-  SOCIAL_URLS.LINKEDIN,
-  SOCIAL_URLS.YOUTUBE,
-];
-
-export const Footer = ({ locale }) => {
+export const Footer = ({ locale, socialItems }) => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
   return (
     <div className="w-full border-t-30 border-primary p-20 mt-20 pb-5 bottom-0 bg-inherit  h-[620px] sm:h-[320px] bg-[#F6F7F9]! m-auto">
@@ -49,19 +41,30 @@ export const Footer = ({ locale }) => {
             Энхтайваны өргөн чөлөө-4, Экспресс Тауэр 701-2.
           </p>
           <div className="flex gap-4">
-            {socialUrls.map((x, idx) => {
-              return (
-                <SocialIcon
-                  url={x}
-                  target="_blank"
-                  key={idx}
-                  bgColor="transparent"
-                  fgColor="#1A75BC"
-                  className={`hover:bg-black/10 rounded-full hidden md:block bg-[#E8F1F8] `}
-                  style={{ height: 40, width: 40 }}
-                />
-              );
-            })}
+            <SocialIcon
+              url={socialItems.facebook}
+              target="_blank"
+              bgColor="transparent"
+              fgColor="#1A75BC"
+              className={`hover:bg-black/10 rounded-full hidden md:block bg-[#E8F1F8] `}
+              style={{ height: 40, width: 40 }}
+            />
+            <SocialIcon
+              url={socialItems.linkedin}
+              target="_blank"
+              bgColor="transparent"
+              fgColor="#1A75BC"
+              className={`hover:bg-black/10 rounded-full hidden md:block bg-[#E8F1F8] `}
+              style={{ height: 40, width: 40 }}
+            />
+            <SocialIcon
+              url={socialItems.youtube}
+              target="_blank"
+              bgColor="transparent"
+              fgColor="#1A75BC"
+              className={`hover:bg-black/10 rounded-full hidden md:block bg-[#E8F1F8] `}
+              style={{ height: 40, width: 40 }}
+            />
           </div>
         </div>
       </div>

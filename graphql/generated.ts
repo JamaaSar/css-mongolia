@@ -29,9 +29,46 @@ export type AboutUsPageSetting = AboutUsPageSetting_Fields & AcfFieldGroup & Acf
    */
   fieldGroupName?: Maybe<Scalars['String']>;
   /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;AboutUsPageSetting&quot; Field Group */
+  members?: Maybe<AboutUsPageSettingMembers>;
+  /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;AboutUsPageSetting&quot; Field Group */
   missionVisionValues?: Maybe<AboutUsPageSettingMissionVisionValues>;
   /** Field of the &quot;repeater&quot; Field Type added to the schema as part of the &quot;AboutUsPageSetting&quot; Field Group */
   strategy?: Maybe<Array<Maybe<AboutUsPageSettingStrategy>>>;
+};
+
+/** The &quot;AboutUsPageSettingMembers&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+export type AboutUsPageSettingMembers = AboutUsPageSettingMembers_Fields & AcfFieldGroup & AcfFieldGroupFields & {
+  __typename?: 'AboutUsPageSettingMembers';
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
+  boardMembersTitle?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
+  boardMembersTitleMn?: Maybe<Scalars['String']>;
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
+  membersTitle?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
+  membersTitleMn?: Maybe<Scalars['String']>;
+};
+
+/** Interface representing fields of the ACF &quot;AboutUsPageSettingMembers&quot; Field Group */
+export type AboutUsPageSettingMembers_Fields = {
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
+  boardMembersTitle?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
+  boardMembersTitleMn?: Maybe<Scalars['String']>;
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
+  membersTitle?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
+  membersTitleMn?: Maybe<Scalars['String']>;
 };
 
 /** The &quot;AboutUsPageSettingMissionVisionValues&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
@@ -220,6 +257,8 @@ export type AboutUsPageSetting_Fields = {
    * @deprecated Use __typename instead
    */
   fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;AboutUsPageSetting&quot; Field Group */
+  members?: Maybe<AboutUsPageSettingMembers>;
   /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;AboutUsPageSetting&quot; Field Group */
   missionVisionValues?: Maybe<AboutUsPageSettingMissionVisionValues>;
   /** Field of the &quot;repeater&quot; Field Type added to the schema as part of the &quot;AboutUsPageSetting&quot; Field Group */
@@ -1328,6 +1367,49 @@ export type Connection = {
   nodes: Array<Node>;
   /** Information about pagination in a connection. */
   pageInfo: PageInfo;
+};
+
+/** The &quot;ContactUsPageSettings&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+export type ContactUsPageSettings = AcfFieldGroup & AcfFieldGroupFields & ContactUsPageSettings_Fields & {
+  __typename?: 'ContactUsPageSettings';
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;ContactUsPageSettings&quot; Field Group */
+  address?: Maybe<Scalars['String']>;
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;ContactUsPageSettings&quot; Field Group */
+  addressMn?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactUsPageSettings&quot; Field Group */
+  contactUsTitle?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactUsPageSettings&quot; Field Group */
+  contactUsTitleMn?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactUsPageSettings&quot; Field Group */
+  email?: Maybe<Scalars['String']>;
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactUsPageSettings&quot; Field Group */
+  phone?: Maybe<Scalars['String']>;
+};
+
+/** Interface representing fields of the ACF &quot;ContactUsPageSettings&quot; Field Group */
+export type ContactUsPageSettings_Fields = {
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;ContactUsPageSettings&quot; Field Group */
+  address?: Maybe<Scalars['String']>;
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;ContactUsPageSettings&quot; Field Group */
+  addressMn?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactUsPageSettings&quot; Field Group */
+  contactUsTitle?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactUsPageSettings&quot; Field Group */
+  contactUsTitleMn?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactUsPageSettings&quot; Field Group */
+  email?: Maybe<Scalars['String']>;
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactUsPageSettings&quot; Field Group */
+  phone?: Maybe<Scalars['String']>;
 };
 
 /** Base interface for content objects like posts, pages, and media items. Provides common fields available across these content types. */
@@ -4106,6 +4188,56 @@ export type MenuMenuItemsArgs = {
   where?: InputMaybe<MenuToMenuItemConnectionWhereArgs>;
 };
 
+/** The &quot;MenuAction&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+export type MenuAction = AcfFieldGroup & AcfFieldGroupFields & MenuAction_Fields & {
+  __typename?: 'MenuAction';
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;repeater&quot; Field Type added to the schema as part of the &quot;MenuAction&quot; Field Group */
+  menuItems?: Maybe<Array<Maybe<MenuActionMenuItems>>>;
+};
+
+/** The &quot;MenuActionMenuItems&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+export type MenuActionMenuItems = AcfFieldGroup & AcfFieldGroupFields & MenuActionMenuItems_Fields & {
+  __typename?: 'MenuActionMenuItems';
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;MenuActionMenuItems&quot; Field Group */
+  menuItem?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;MenuActionMenuItems&quot; Field Group */
+  menuItemMn?: Maybe<Scalars['String']>;
+};
+
+/** Interface representing fields of the ACF &quot;MenuActionMenuItems&quot; Field Group */
+export type MenuActionMenuItems_Fields = {
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;MenuActionMenuItems&quot; Field Group */
+  menuItem?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;MenuActionMenuItems&quot; Field Group */
+  menuItemMn?: Maybe<Scalars['String']>;
+};
+
+/** Interface representing fields of the ACF &quot;MenuAction&quot; Field Group */
+export type MenuAction_Fields = {
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;repeater&quot; Field Type added to the schema as part of the &quot;MenuAction&quot; Field Group */
+  menuItems?: Maybe<Array<Maybe<MenuActionMenuItems>>>;
+};
+
 /** A paginated collection of Menu Nodes, Supports cursor-based pagination and filtering to efficiently retrieve sets of Menu Nodes */
 export type MenuConnection = {
   /** A list of edges (relational context) between RootQuery and connected Menu Nodes */
@@ -5526,10 +5658,14 @@ export type PageInfo = {
   startCursor?: Maybe<Scalars['String']>;
 };
 
-export type PageSettings = AcfOptionsPage & Node & WithAcfNewsPageSetting & WithAcfProjectPageSetting & {
+export type PageSettings = AcfOptionsPage & Node & WithAcfContactUsPageSettings & WithAcfMenuAction & WithAcfNewsPageSetting & WithAcfProjectPageSetting & WithAcfSocialMedia & {
   __typename?: 'PageSettings';
+  /** Fields of the ContactUsPageSettings ACF Field Group */
+  contactUsPageSettings?: Maybe<ContactUsPageSettings>;
   /** The globally unique ID for the object */
   id: Scalars['ID'];
+  /** Fields of the MenuAction ACF Field Group */
+  menuAction?: Maybe<MenuAction>;
   menuTitle?: Maybe<Scalars['String']>;
   /** Fields of the NewsPageSetting ACF Field Group */
   newsPageSetting?: Maybe<NewsPageSetting>;
@@ -5537,6 +5673,8 @@ export type PageSettings = AcfOptionsPage & Node & WithAcfNewsPageSetting & With
   parentId?: Maybe<Scalars['String']>;
   /** Fields of the ProjectPageSetting ACF Field Group */
   projectPageSetting?: Maybe<ProjectPageSetting>;
+  /** Fields of the SocialMedia ACF Field Group */
+  socialMedia?: Maybe<SocialMedia>;
 };
 
 /** Connection between the Page type and the Comment type */
@@ -10360,6 +10498,37 @@ export type Settings = {
   writingSettingsUseSmilies?: Maybe<Scalars['Boolean']>;
 };
 
+/** The &quot;SocialMedia&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+export type SocialMedia = AcfFieldGroup & AcfFieldGroupFields & SocialMedia_Fields & {
+  __typename?: 'SocialMedia';
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;SocialMedia&quot; Field Group */
+  facebook?: Maybe<Scalars['String']>;
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;SocialMedia&quot; Field Group */
+  linkedin?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;SocialMedia&quot; Field Group */
+  youtube?: Maybe<Scalars['String']>;
+};
+
+/** Interface representing fields of the ACF &quot;SocialMedia&quot; Field Group */
+export type SocialMedia_Fields = {
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;SocialMedia&quot; Field Group */
+  facebook?: Maybe<Scalars['String']>;
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;SocialMedia&quot; Field Group */
+  linkedin?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;SocialMedia&quot; Field Group */
+  youtube?: Maybe<Scalars['String']>;
+};
+
 /** A taxonomy term used to organize and classify content. Tags do not have a hierarchy and are generally used for more specific classifications. */
 export type Tag = DatabaseIdentifier & MenuItemLinkable & Node & TermNode & UniformResourceIdentifiable & {
   __typename?: 'Tag';
@@ -12484,6 +12653,12 @@ export type WithAcfAboutUsPageSetting = {
   aboutUsPageSetting?: Maybe<AboutUsPageSetting>;
 };
 
+/** Provides access to fields of the &quot;ContactUsPageSettings&quot; ACF Field Group via the &quot;contactUsPageSettings&quot; field */
+export type WithAcfContactUsPageSettings = {
+  /** Fields of the ContactUsPageSettings ACF Field Group */
+  contactUsPageSettings?: Maybe<ContactUsPageSettings>;
+};
+
 /** Provides access to fields of the &quot;HomePageSetting&quot; ACF Field Group via the &quot;homePageSetting&quot; field */
 export type WithAcfHomePageSetting = {
   /** Fields of the HomePageSetting ACF Field Group */
@@ -12494,6 +12669,12 @@ export type WithAcfHomePageSetting = {
 export type WithAcfMemberCustomFields = {
   /** Fields of the MemberCustomFields ACF Field Group */
   memberCustomFields?: Maybe<MemberCustomFields>;
+};
+
+/** Provides access to fields of the &quot;MenuAction&quot; ACF Field Group via the &quot;menuAction&quot; field */
+export type WithAcfMenuAction = {
+  /** Fields of the MenuAction ACF Field Group */
+  menuAction?: Maybe<MenuAction>;
 };
 
 /** Provides access to fields of the &quot;NewsCustomFields&quot; ACF Field Group via the &quot;newsCustomFields&quot; field */
@@ -12539,6 +12720,12 @@ export type WithAcfProjectPageSetting = {
 export type WithAcfResourceCustomField = {
   /** Fields of the ResourceCustomField ACF Field Group */
   resourceCustomField?: Maybe<ResourceCustomField>;
+};
+
+/** Provides access to fields of the &quot;SocialMedia&quot; ACF Field Group via the &quot;socialMedia&quot; field */
+export type WithAcfSocialMedia = {
+  /** Fields of the SocialMedia ACF Field Group */
+  socialMedia?: Maybe<SocialMedia>;
 };
 
 /** The writing setting type */

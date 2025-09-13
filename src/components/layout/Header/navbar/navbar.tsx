@@ -6,13 +6,13 @@ import { usePathname } from "next/navigation";
 import { useMediaQuery } from "react-responsive";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
-export const Navbar = ({ locale, footer = false }) => {
+export const Navbar = ({ locale, items = [], footer = false }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const t = useTranslations();
   const cleanedPath = pathname.replace(`/${locale}`, "") || "/";
   const isMobile = useMediaQuery({ maxWidth: 820 });
-
+  console.log("items in navbar", items);
   const menuItems = [
     { title: t("menu.homepage"), href: "/", isActive: cleanedPath === "/" },
     {

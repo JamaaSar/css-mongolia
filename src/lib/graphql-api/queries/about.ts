@@ -41,6 +41,12 @@ export async function getAboutUsPageSettings(): Promise<AboutUsPageSetting> {
             title
             titleMn
           }
+          members {
+            boardMembersTitle
+            boardMembersTitleMn
+            membersTitle
+            membersTitleMn
+          }
         }
       }
     }

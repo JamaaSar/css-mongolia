@@ -28,17 +28,10 @@ const availableOptions: Options = {
   mn: { value: "mn", label: "МОНГОЛ" },
 };
 
-const socialUrls: string[] = [
-  SOCIAL_URLS.FACEBOOK,
-  SOCIAL_URLS.LINKEDIN,
-  SOCIAL_URLS.YOUTUBE,
-];
-
-export const Topbar = ({ locale }) => {
+export const Topbar = ({ locale, socialItems }) => {
   const router = useRouter();
   const pathname = usePathname();
   const isMobile = useMediaQuery({ maxWidth: 724 });
-
   const handleLanguageChange = (newLocale: string) => {
     if (newLocale === locale) return;
 
@@ -57,19 +50,30 @@ export const Topbar = ({ locale }) => {
   return (
     <div className="flex justify-end gap-4 sm:gap-10">
       <div className="flex gap-4">
-        {socialUrls.map((x, idx) => {
-          return (
-            <SocialIcon
-              url={x}
-              target="_blank"
-              key={idx}
-              bgColor="transparent"
-              fgColor="#030C13"
-              className={`hover:bg-black/10 rounded-full hidden md:block bg-black/10 `}
-              style={{ height: 40, width: 40 }}
-            />
-          );
-        })}
+        <SocialIcon
+          url={socialItems.facebook}
+          target="_blank"
+          bgColor="transparent"
+          fgColor="#030C13"
+          className={`hover:bg-black/10 rounded-full hidden md:block bg-black/10 `}
+          style={{ height: 40, width: 40 }}
+        />
+        <SocialIcon
+          url={socialItems.linkedin}
+          target="_blank"
+          bgColor="transparent"
+          fgColor="#030C13"
+          className={`hover:bg-black/10 rounded-full hidden md:block bg-black/10 `}
+          style={{ height: 40, width: 40 }}
+        />
+        <SocialIcon
+          url={socialItems.youtube}
+          target="_blank"
+          bgColor="transparent"
+          fgColor="#030C13"
+          className={`hover:bg-black/10 rounded-full hidden md:block bg-black/10 `}
+          style={{ height: 40, width: 40 }}
+        />
       </div>
 
       {isMobile ? (

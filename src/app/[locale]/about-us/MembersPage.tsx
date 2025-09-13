@@ -8,7 +8,7 @@ import { MemberCard } from "@/components/card/MemberCard";
 import { H2 } from "@/components/generic/Typography";
 import { useMediaQuery } from "react-responsive";
 
-export default function MembersPage({ members, locale }) {
+export default function MembersPage({ title, members, locale }) {
   const [currentPage, setCurrentPage] = useState(1);
   const isBigScreen = useMediaQuery({ minWidth: 1550 });
   const isTablet = useMediaQuery({ maxWidth: 1200 });
@@ -33,7 +33,14 @@ export default function MembersPage({ members, locale }) {
 
   return (
     <div>
-      <H2 title="Board Members" marginTop={false} />
+      <H2
+        title={getTranslated(
+          locale,
+          title.boardMembersTitleMn,
+          title.boardMembersTitle
+        )}
+        marginTop={false}
+      />
       <div
         className="grid grid-cols-3 gap-4"
         style={{
@@ -65,7 +72,9 @@ export default function MembersPage({ members, locale }) {
           />
         ))}
       </div>
-      <H2 title="Members" />
+      <H2
+        title={getTranslated(locale, title.membersTitleMn, title.membersTitle)}
+      />
       <div className="flex flex-wrap gap-4 items-center justify-center md:justify-start">
         {allMembers.map((data: Member) => (
           <MemberCard

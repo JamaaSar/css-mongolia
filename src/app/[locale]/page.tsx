@@ -3,8 +3,8 @@ import { H1 } from "@/components/generic/Typography/H1";
 import { NewsSection } from "@/components/sections/NewsSection";
 import { ProjectSection } from "@/components/sections/ProjectSection";
 import { getTranslated } from "@/lib/getTranslated";
-import { getHomePage } from "@/lib/graphql-api/queries/home";
-import { News, Project } from "graphql/generated";
+import { getHomePage, getMenuActions } from "@/lib/graphql-api/queries/home";
+import { MenuItem, News, Project } from "graphql/generated";
 import { useMediaQuery } from "react-responsive";
 
 export default async function HomePage({ params }) {

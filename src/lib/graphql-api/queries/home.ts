@@ -1,5 +1,11 @@
 import { fetchAPI } from "../api";
-import { HomePageSetting } from "graphql/generated";
+import {
+  AboutUsPageSetting,
+  HomePageSetting,
+  MenuAction,
+  MenuItem,
+  SocialMedia,
+} from "graphql/generated";
 
 export async function getHomePage(): Promise<HomePageSetting> {
   const data = await fetchAPI(
@@ -36,6 +42,8 @@ export async function getHomePage(): Promise<HomePageSetting> {
                     sourceLink
                     sourceName
                     sourceNameMn
+                    title
+                    titleMn
                     featuredImage {
                       node {
                         mediaDetails {
@@ -103,4 +111,41 @@ export async function getHomePage(): Promise<HomePageSetting> {
     `
   );
   return data.homePageSettings.homePageSetting;
+}
+
+export async function getSocialMedia(): Promise<SocialMedia> {
+  const data = await fetchAPI(
+    `query getSocialMedia {
+      pageSettings {
+        socialMedia {
+          facebook
+          linkedin
+          youtube
+        }
+      }
+    }
+    `
+  );
+  return data.pageSettings.socialMedia || [];
+}
+
+export async function getMenuActions(): Promise<MenuItem[]> {
+  const data = await fetchAPI(
+    `query getSocialMedia {
+      pageSettings {
+        menuAction {
+          menuItems {
+            menuItem
+            menuItemMn
+          }
+        }
+      }
+    }
+    `
+  );
+  console.log(
+    "data.pageSettings.menuAction.menuItems",
+    data.pageSettings.menuAction.menuItems
+  );
+  return data.pageSettings.menuAction.menuItems || [];
 }

@@ -1,5 +1,6 @@
 import { getTranslated } from "@/lib/getTranslated";
 import {
+  AboutUsPageSettingMembers,
   AboutUsPageSettingMissionVisionValues,
   AboutUsPageSettingStrategy,
   Member,
@@ -19,9 +20,10 @@ export default async function NewsPage({ params }) {
   const members = await getTeamMembers();
   const missionVisionValues =
     setting.missionVisionValues as AboutUsPageSettingMissionVisionValues;
+  const membersTitle = setting.members as AboutUsPageSettingMembers;
   const strategy = setting.strategy as AboutUsPageSettingStrategy[];
   const allMembers = members as Member[];
-
+  console.log(membersTitle);
   return (
     <div className="css-home-container m-auto 2xl:container">
       <div className="mt-24">
@@ -46,7 +48,11 @@ export default async function NewsPage({ params }) {
         />
       </div>
       <div>
-        <MembersPage members={allMembers} locale={locale} />
+        <MembersPage
+          title={membersTitle}
+          members={allMembers}
+          locale={locale}
+        />
       </div>
     </div>
   );

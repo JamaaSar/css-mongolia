@@ -8,6 +8,8 @@ import "../../assets/globals.css";
 import { Header } from "@/components/layout/Header/header";
 import { Roboto, Rubik } from "next/font/google";
 import { Footer } from "@/components/layout/Footer/footer";
+import { getMenuActions, getSocialMedia } from "@/lib/graphql-api/queries/home";
+import { MenuItem, SocialMedia } from "graphql/generated";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -27,6 +29,8 @@ const roboto = Roboto({
 
 export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
+  const items = await getMenuActions();
+  const socialItems = (await getSocialMedia()) as SocialMedia[];
 
   if (!routing.locales.includes(locale)) {
     notFound();
@@ -35,6 +39,7 @@ export default async function LocaleLayout({ children, params }) {
   setRequestLocale(locale);
 
   const messages = await getMessages();
+  const menuItems = items as MenuItem[];
 
   return (
     <html lang={locale} className={`${rubik.variable} ${roboto.variable}`}>
@@ -43,9 +48,9 @@ export default async function LocaleLayout({ children, params }) {
       </head>
       <NextIntlClientProvider messages={messages}>
         <body>
-          <Header locale={locale} />
+          <Header locale={locale} items={menuItems} socialItems={socialItems} />
           <main className="grow bg-inherit pb-10"> {children}</main>
-          <Footer locale={locale} />
+          <Footer locale={locale} socialItems={socialItems} />
         </body>
       </NextIntlClientProvider>
     </html>

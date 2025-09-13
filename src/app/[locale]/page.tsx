@@ -14,6 +14,16 @@ export default async function HomePage({ params }) {
   const news = data.newsSection.featuredNews.nodes as News[];
   const projects = data.projectSection.featuredProject.nodes as Project[];
 
+  const filteredNews = news.filter((item) => {
+    const lang = item.newsCustomFields.newsLanguage;
+    return lang === "both" || lang === locale;
+  });
+
+  const filteredProjects = projects.filter((item) => {
+    const lang = item.projectCustomFields.projectLanguage;
+    return lang === "both" || lang === locale;
+  });
+
   return (
     <div>
       <Banner banners={data.banners} />
@@ -28,7 +38,7 @@ export default async function HomePage({ params }) {
             data.newsSection.newsTitleMn,
             data.newsSection.newsTitle
           )}
-          news={news}
+          news={filteredNews}
         />
         <ProjectSection
           title={getTranslated(
@@ -36,7 +46,7 @@ export default async function HomePage({ params }) {
             data.projectSection.projectTitleMn,
             data.projectSection.projectTitle
           )}
-          projects={projects}
+          projects={filteredProjects}
         />
         {/* <RessourceSection
           title={getTranslated(

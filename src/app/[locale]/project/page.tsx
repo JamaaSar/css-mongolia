@@ -11,6 +11,10 @@ export default async function NewsPage({ params }) {
 
   const projects = await getProjects();
   const setting = await getProjectLandingPageSettings();
+  const filteredProjects = projects.filter((item) => {
+    const lang = item.projectCustomFields.projectLanguage;
+    return lang === "both" || lang === locale;
+  });
 
   return (
     <div className="css-container 2xl:container">
@@ -21,7 +25,7 @@ export default async function NewsPage({ params }) {
           setting.projectLandingPageTitle
         )}
       />
-      <ProjectPage projects={projects} locale={locale} />
+      <ProjectPage projects={filteredProjects} locale={locale} />
     </div>
   );
 }

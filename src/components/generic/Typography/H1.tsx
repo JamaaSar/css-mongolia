@@ -1,6 +1,4 @@
 "use client";
-import Link from "next/link";
-import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
 export const H1 = ({
   title,

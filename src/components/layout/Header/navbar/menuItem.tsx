@@ -1,8 +1,6 @@
 "use client";
-import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { JSX, useState } from "react";
 import Link from "next/link";
-import { useMediaQuery } from "react-responsive";
 
 type MenuItemProps = {
   title: string | JSX.Element;
@@ -15,10 +13,6 @@ type MenuItemProps = {
 export const MenuItem = (props: MenuItemProps) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [delayHandler, setDelayHandler] = useState(null);
-  const isMobile = useMediaQuery({ maxWidth: 820 });
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
 
   const handleMouseEnter = (event) => {
     setIsDropdownOpen(true);

@@ -22,7 +22,9 @@ export const StrategyCard = ({
         {type === "mission" && <MissionIcon />}
         {type === "vision" && <VisionIcon />}
         {type === "values" && <ValuesIcon />}
-        <h2 className="text-[22px] font-bold uppercase m-auto">{title}</h2>
+        <h2 className="text-lg sm:text-[22px] font-bold uppercase m-auto">
+          {title}
+        </h2>
       </div>
       <div className="px-6 pt-2 ">
         <div

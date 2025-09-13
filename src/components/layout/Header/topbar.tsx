@@ -2,7 +2,6 @@
 import { SOCIAL_URLS } from "../../../lib/consts/urls";
 import { SocialIcon } from "react-social-icons";
 import { usePathname, useRouter } from "next/navigation";
-import { MenuItem } from "./navbar/menuItem";
 import Link from "next/link";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import {
@@ -10,7 +9,7 @@ import {
   MenuButton,
   MenuItems,
   Transition,
-  MenuItem as MI,
+  MenuItem,
 } from "@headlessui/react";
 import { Fragment } from "react";
 import { useMediaQuery } from "react-responsive";
@@ -102,7 +101,7 @@ export const Topbar = ({ locale }) => {
                     const option: Option = availableOptions[key];
 
                     return (
-                      <MI key={key}>
+                      <MenuItem key={key}>
                         {({ active }) => (
                           <Link
                             className={`${
@@ -115,7 +114,7 @@ export const Topbar = ({ locale }) => {
                             {option.label}
                           </Link>
                         )}
-                      </MI>
+                      </MenuItem>
                     );
                   })}
               </div>

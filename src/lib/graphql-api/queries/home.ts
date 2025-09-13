@@ -60,6 +60,7 @@ export async function getHomePage(): Promise<HomePageSetting> {
                   databaseId
                   title
                   projectCustomFields {
+                    projectLanguage
                     excerpt
                     excerptMn
                     featuredImage {

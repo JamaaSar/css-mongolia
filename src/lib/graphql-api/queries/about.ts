@@ -1,4 +1,9 @@
-import { AboutUsPageSetting, Project, ProjectIdType } from "graphql/generated";
+import {
+  AboutUsPageSetting,
+  Member,
+  Project,
+  ProjectIdType,
+} from "graphql/generated";
 import { fetchAPI } from "../api";
 
 export async function getAboutUsPageSettings(): Promise<AboutUsPageSetting> {
@@ -44,82 +49,37 @@ export async function getAboutUsPageSettings(): Promise<AboutUsPageSetting> {
   return data.aboutUsPageSettings.aboutUsPageSetting || [];
 }
 
-export async function getProjects(): Promise<Project[]> {
+export async function getTeamMembers(): Promise<Member[]> {
   const data = await fetchAPI(
     `
-    query getAllProjects {
-    projects(first: 1000) {
-      edges {
-        node {
-          databaseId
-          dateGmt
-          slug
-          desiredSlug
-          title
-          projectCustomFields {
-            excerpt
-            excerptMn
-            body
-            bodyMn
-            featuredImage {
-              node {
-                mediaDetails {
-                  sizes(include: [MEDIUM, MEDIUM_LARGE]) {
-                    sourceUrl
-                    name
-                  }
+    query MyQuery {
+      members {
+        edges {
+          node {
+            memberCustomFields {
+              nameMn
+              name
+              isBoardMember
+              image {
+                node {
+                  mediaItemUrl
                 }
               }
+              bio
+              bioMn
+              position
+              positionMn
             }
           }
         }
       }
     }
-  }
-    `
+  `
   );
-  // parse the data into Project objects
-  if (data && data.projects && data.projects.edges) {
-    if (data.projects.edges.length > 0) {
-      return data.projects.edges.map((x) => x.node as Project);
+  if (data && data.members && data.members.edges) {
+    if (data.members.edges.length > 0) {
+      return data.members.edges.map((x) => x.node as Member);
     }
   }
   return [];
-}
-
-export async function getProjectFull(
-  id,
-  idType: ProjectIdType = ProjectIdType.Slug
-): Promise<Project> {
-  const data = await fetchAPI(
-    `
-    query project($id: ID!, $idType: ProjectIdType!) {
-      project(id: $id, idType: $idType) {
-        databaseId
-        desiredSlug
-        slug
-        dateGmt
-        title
-        projectCustomFields {
-          body
-          bodyMn
-          featuredImage {
-            node {
-              mediaDetails {
-                sizes(include: [MEDIUM, MEDIUM_LARGE, LARGE]) {
-                  name
-                  sourceUrl
-                }
-              }
-            }
-          }
-        }
-      }
-    } 
-    `,
-    {
-      variables: { id, idType },
-    }
-  ).catch((err) => console.error("Failed to fetch news", err));
-  return data.project;
 }

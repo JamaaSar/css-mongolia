@@ -24,12 +24,12 @@ export const NewsSection = ({
     return lang === "both" || lang === locale;
   });
 
-  const lenght = isTablet
+  const numberOfCardsToShow = isTablet
     ? 4
     : filteredNews.length == 6
     ? 6
     : filteredNews.length;
-
+  const numberOfGrid = filteredNews.length > 4 ? 4 : filteredNews.length;
   const extraButton = {
     title: t("see-more"),
     url: "/news",
@@ -45,7 +45,13 @@ export const NewsSection = ({
             isMobile ? "1fr" : isTablet ? "1fr 1fr " : "1fr 1fr 1fr"
           }`,
           gridTemplateRows: `${
-            isMobile ? "270px repeat(3, 270px)" : "270px repeat(1, 270px)"
+            isMobile
+              ? `${
+                  numberOfGrid === 1
+                    ? "270px"
+                    : "270px repeat(${numberOfGrid}, 270px)"
+                }`
+              : `${numberOfGrid <= 2 ? "270px" : "270px repeat(1, 270px)"}`
           }`,
         }}
       >
@@ -86,7 +92,7 @@ export const NewsSection = ({
         ))}
 
         {filteredNews
-          .slice(sliceNumber, lenght)
+          .slice(sliceNumber, numberOfCardsToShow)
           .map((data: News, index: number) => (
             <NewsCard
               key={data.databaseId + index}

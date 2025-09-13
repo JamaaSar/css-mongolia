@@ -35,6 +35,7 @@ export async function getProjects(): Promise<Project[]> {
             excerptMn
             body
             bodyMn
+            projectLanguage
             featuredImage {
               node {
                 mediaDetails {

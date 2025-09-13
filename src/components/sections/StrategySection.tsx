@@ -71,7 +71,7 @@ export const StrategySection = ({
       <div className="mt-8">
         {strategy.map((item, index) => (
           <div key={index} className="mb-10">
-            <h3 className="text-[26px] font-bold uppercase mb-2">
+            <h3 className="text-xl md:text-[26px] font-bold uppercase mb-2">
               {getTranslated(locale, item.titleMn, item.title)}
             </h3>
             <div

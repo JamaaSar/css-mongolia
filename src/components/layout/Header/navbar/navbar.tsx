@@ -64,7 +64,7 @@ export const Navbar = ({ locale, footer = false }) => {
             className={`
         ${
           isMenuOpen
-            ? "-translate-x-10 bg-white w-full lg:hidden fixed py-10 flex flex-col gap-7 h-full z-30 px-10 uppercase text-lg tracking-widest transition-all ease-in-out duration-200 overflow-x-hidden"
+            ? "-translate-x-50 bg-white w-full top-32 lg:hidden fixed py-10 flex flex-col gap-7 h-full z-30 px-10 uppercase text-lg tracking-widest transition-all ease-in-out duration-200 overflow-x-hidden"
             : "-translate-x-full hidden"
         }`}
           >

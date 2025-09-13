@@ -13,23 +13,23 @@ const PhoneIcon: FC = () => (
       fill="#8DC641"
       fill-opacity="0.3"
       stroke="#1A75BC"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M23.334 11.7333C24.434 12.2499 25.434 12.9499 26.2673 13.7999C27.084 14.6166 27.7673 15.5999 28.2673 16.6666"
       stroke="#1A75BC"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M25 5.41663C27.35 6.03329 29.45 7.24996 31.1167 8.91663C32.7667 10.5833 33.9833 12.6666 34.5833 15"
       stroke="#1A75BC"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

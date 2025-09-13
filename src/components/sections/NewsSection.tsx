@@ -29,7 +29,9 @@ export const NewsSection = ({
     : filteredNews.length == 6
     ? 6
     : filteredNews.length;
+
   const numberOfGrid = filteredNews.length > 4 ? 4 : filteredNews.length;
+  console.log(numberOfGrid);
   const extraButton = {
     title: t("see-more"),
     url: "/news",
@@ -49,7 +51,7 @@ export const NewsSection = ({
               ? `${
                   numberOfGrid === 1
                     ? "270px"
-                    : "270px repeat(${numberOfGrid}, 270px)"
+                    : `270px repeat(${numberOfGrid - 1}, 270px)`
                 }`
               : `${numberOfGrid <= 2 ? "270px" : "270px repeat(1, 270px)"}`
           }`,

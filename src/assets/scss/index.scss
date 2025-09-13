@@ -137,40 +137,25 @@ body,
     }
   }
 }
+.news-main-content {
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 100px;
+  height: max-content;
+}
 
 .article_news {
   width: 98%;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+
   .featuredImage {
     width: 98%;
     object-fit: cover;
     object-position: 100% 0%;
   }
-  .articleBody {
-    width: 98% !important;
-    iframe {
-      width: 98% !important;
-      .player {
-        width: 98% !important;
-      }
-    }
-    figure {
-      width: 98% !important;
 
-      img {
-        max-width: 100%;
-        width: 100%;
-        min-width: 100%;
-        margin: 0px auto 0px auto;
-        display: block !important;
-        border-radius: 4px;
-        &.size-full {
-          width: 98%;
-        }
-      }
-    }
-  }
   .category_news {
     span {
       font-size: 12px;
@@ -181,9 +166,13 @@ body,
     font-size: 18px;
     line-height: 150%;
   }
+  .articleBody::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 
   .articleBody {
-    width: 1000px;
     margin-left: auto;
     margin-right: auto;
 
@@ -205,9 +194,36 @@ body,
     img {
       display: inline-block;
     }
+
+    img[class*="aligncenter"] {
+      display: block !important;
+    }
+
+    iframe {
+      width: 98% !important;
+      .player {
+        width: 98% !important;
+      }
+    }
+    figure {
+      width: 98% !important;
+
+      img {
+        max-width: 100%;
+        width: 100%;
+        min-width: 100%;
+        margin: 0px auto 0px auto;
+        display: block !important;
+        border-radius: 4px;
+        &.size-full {
+          width: 98%;
+        }
+      }
+    }
     .alignleft {
       float: left;
       margin-right: 25px;
+      display: block;
     }
     .alignright {
       float: right;
@@ -218,7 +234,7 @@ body,
       margin: 0 auto;
       text-align: center;
     }
-    .vp-center {
+    img .vp-center {
       max-width: 716.57px;
       margin: 0px auto 0px auto;
       display: block !important;

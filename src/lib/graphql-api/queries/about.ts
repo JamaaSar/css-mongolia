@@ -56,6 +56,7 @@ export async function getTeamMembers(): Promise<Member[]> {
       members {
         edges {
           node {
+          databaseId
             memberCustomFields {
               nameMn
               name

@@ -31,8 +31,6 @@ export const MemberCard = ({
     SOCIAL_URLS.YOUTUBE,
   ];
   const isBoardMemberBoolean = isBoardMember === "false" ? false : true;
-  console.log(isBoardMember ? "board member" : "not board member");
-  console.log(isBoardMember);
 
   return (
     <div

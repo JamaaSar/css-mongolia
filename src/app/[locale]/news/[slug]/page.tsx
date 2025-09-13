@@ -9,9 +9,6 @@ export default async function NewsPostPage({ params }) {
   const { slug, locale } = await params;
   const isPostId = slug.match(/^[0-9]+$/);
 
-  console.log("isPostId", isPostId);
-  console.log("slug", slug);
-
   const post = await getNewsFull(
     slug,
     isPostId ? NewsIdType.DatabaseId : NewsIdType.Slug
@@ -22,18 +19,19 @@ export default async function NewsPostPage({ params }) {
       <article>
         {/* <BreadCrumb breadCrumbItems={breadCrumbItems} /> */}
         <div className="css-container 2xl:container m-auto">
-          <div className="article_news">
-            <H2
-              className="uppercase"
-              title={getTranslated(
-                locale,
-                post?.newsCustomFields.titleMn,
-                post?.newsCustomFields.title
-              )}
-            />
-            <div className="subSection">
-              <div className="authorsSection">
-                {/* {post?.authors && (
+          <div className="news-main-content">
+            <div className="article_news">
+              <H2
+                className="uppercase"
+                title={getTranslated(
+                  locale,
+                  post?.newsCustomFields.titleMn,
+                  post?.newsCustomFields.title
+                )}
+              />
+              <div className="subSection">
+                <div className="authorsSection">
+                  {/* {post?.authors && (
                           <>
                             {post?.authors?.map((author: any) => (
                               <a key={Math.random()} className="authors" href={author.authorLink} target="_blank">
@@ -44,22 +42,23 @@ export default async function NewsPostPage({ params }) {
                             ))}
                           </>
                         )} */}
+                </div>
+                <span className="flex gap-4">
+                  <CalendarDateRangeIcon className="w-6 h-6" />
+                  {formatDate(post?.dateGmt)}
+                </span>
               </div>
-              <span className="flex gap-4">
-                <CalendarDateRangeIcon className="w-6 h-6" />
-                {formatDate(post?.dateGmt)}
-              </span>
+              <div
+                className="articleBody relative"
+                dangerouslySetInnerHTML={{
+                  __html: getTranslated(
+                    locale,
+                    post.newsCustomFields.bodyMn,
+                    post.newsCustomFields.body
+                  ),
+                }}
+              ></div>
             </div>
-            <div
-              className="articleBody"
-              dangerouslySetInnerHTML={{
-                __html: getTranslated(
-                  locale,
-                  post.newsCustomFields.bodyMn,
-                  post.newsCustomFields.body
-                ),
-              }}
-            ></div>
           </div>
         </div>
       </article>

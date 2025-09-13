@@ -31,7 +31,6 @@ export const NewsSection = ({
     : filteredNews.length;
 
   const numberOfGrid = filteredNews.length > 4 ? 4 : filteredNews.length;
-  console.log(numberOfGrid);
   const extraButton = {
     title: t("see-more"),
     url: "/news",

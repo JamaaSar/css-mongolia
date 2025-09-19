@@ -30,7 +30,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/en/project": {
+    "/en": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -44,8 +44,8 @@
       ],
       "initialRevalidateSeconds": 60,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[locale]/project",
-      "dataRoute": "/en/project.rsc",
+      "srcRoute": "/[locale]",
+      "dataRoute": "/en.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -55,7 +55,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/mn/project": {
+    "/mn": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -69,33 +69,8 @@
       ],
       "initialRevalidateSeconds": 60,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[locale]/project",
-      "dataRoute": "/mn/project.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/_not-found": {
-      "initialStatus": 404,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/_not-found",
-      "dataRoute": "/_not-found.rsc",
+      "srcRoute": "/[locale]",
+      "dataRoute": "/mn.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -155,7 +130,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/en/resource": {
+    "/en/about-us": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -169,8 +144,8 @@
       ],
       "initialRevalidateSeconds": 60,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[locale]/resource",
-      "dataRoute": "/en/resource.rsc",
+      "srcRoute": "/[locale]/about-us",
+      "dataRoute": "/en/about-us.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -180,7 +155,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/mn/resource": {
+    "/mn/about-us": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -194,58 +169,8 @@
       ],
       "initialRevalidateSeconds": 60,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[locale]/resource",
-      "dataRoute": "/mn/resource.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/en": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 60,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/[locale]",
-      "dataRoute": "/en.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/mn": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 60,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/[locale]",
-      "dataRoute": "/mn.rsc",
+      "srcRoute": "/[locale]/about-us",
+      "dataRoute": "/mn/about-us.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -305,7 +230,8 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/en/about-us": {
+    "/_not-found": {
+      "initialStatus": 404,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -317,10 +243,9 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": 60,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/[locale]/about-us",
-      "dataRoute": "/en/about-us.rsc",
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/_not-found",
+      "dataRoute": "/_not-found.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -330,7 +255,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/mn/about-us": {
+    "/en/resource": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -344,8 +269,83 @@
       ],
       "initialRevalidateSeconds": 60,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[locale]/about-us",
-      "dataRoute": "/mn/about-us.rsc",
+      "srcRoute": "/[locale]/resource",
+      "dataRoute": "/en/resource.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/mn/resource": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 60,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/[locale]/resource",
+      "dataRoute": "/mn/resource.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/en/project": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 60,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/[locale]/project",
+      "dataRoute": "/en/project.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/mn/project": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 60,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/[locale]/project",
+      "dataRoute": "/mn/project.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -357,7 +357,7 @@
     }
   },
   "dynamicRoutes": {
-    "/[locale]/project": {
+    "/[locale]": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -369,10 +369,10 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "routeRegex": "^/([^/]+?)/project(?:/)?$",
-      "dataRoute": "/[locale]/project.rsc",
+      "routeRegex": "^/([^/]+?)(?:/)?$",
+      "dataRoute": "/[locale].rsc",
       "fallback": null,
-      "dataRouteRegex": "^/([^/]+?)/project\\.rsc$",
+      "dataRouteRegex": "^/([^/]+?)\\.rsc$",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -407,7 +407,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/[locale]/resource": {
+    "/[locale]/about-us": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -419,35 +419,10 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "routeRegex": "^/([^/]+?)/resource(?:/)?$",
-      "dataRoute": "/[locale]/resource.rsc",
+      "routeRegex": "^/([^/]+?)/about\\-us(?:/)?$",
+      "dataRoute": "/[locale]/about-us.rsc",
       "fallback": null,
-      "dataRouteRegex": "^/([^/]+?)/resource\\.rsc$",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/[locale]": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "routeRegex": "^/([^/]+?)(?:/)?$",
-      "dataRoute": "/[locale].rsc",
-      "fallback": null,
-      "dataRouteRegex": "^/([^/]+?)\\.rsc$",
+      "dataRouteRegex": "^/([^/]+?)/about\\-us\\.rsc$",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -482,7 +457,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/[locale]/about-us": {
+    "/[locale]/resource": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -494,10 +469,35 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "routeRegex": "^/([^/]+?)/about\\-us(?:/)?$",
-      "dataRoute": "/[locale]/about-us.rsc",
+      "routeRegex": "^/([^/]+?)/resource(?:/)?$",
+      "dataRoute": "/[locale]/resource.rsc",
       "fallback": null,
-      "dataRouteRegex": "^/([^/]+?)/about\\-us\\.rsc$",
+      "dataRouteRegex": "^/([^/]+?)/resource\\.rsc$",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/[locale]/project": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "routeRegex": "^/([^/]+?)/project(?:/)?$",
+      "dataRoute": "/[locale]/project.rsc",
+      "fallback": null,
+      "dataRouteRegex": "^/([^/]+?)/project\\.rsc$",
       "allowHeader": [
         "host",
         "x-matched-path",

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { useMediaQuery } from "react-responsive";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import { getMenuItems } from "@/lib/types/MenuItems";
 
 export const Navbar = ({ locale, items = [], footer = false }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -12,37 +13,14 @@ export const Navbar = ({ locale, items = [], footer = false }) => {
   const t = useTranslations();
   const cleanedPath = pathname.replace(`/${locale}`, "") || "/";
   const isMobile = useMediaQuery({ maxWidth: 820 });
-  const menuItems = [
-    { title: t("menu.homepage"), href: "/", isActive: cleanedPath === "/" },
-    {
-      title: t("menu.newspage"),
-      href: "/news",
-      isActive: cleanedPath.includes("news"),
-    },
-    {
-      title: t("menu.project"),
-      href: "/project",
-      isActive: cleanedPath.includes("project"),
-    },
-    // {
-    //   title: t("menu.resource"),
-    //   href: "/resource",
-    //   isActive: cleanedPath.includes("resource"),
-    // },
-    {
-      title: t("menu.about-us"),
-      href: "/about-us",
-      isActive: cleanedPath.includes("about-us"),
-    },
-    {
-      title: t("menu.contact-us"),
-      href: "/contact-us",
-      isActive: cleanedPath.includes("contact-us"),
-    },
-  ];
+  const menuItems = getMenuItems(t, cleanedPath);
 
   return (
-    <div className="uppercase text-sm text-color font-medium tracking-[1px] w-full ">
+    <div
+      className={`uppercase text-sm text-color font-medium tracking-[1px]  ${
+        footer ? "" : "w-full"
+      }`}
+    >
       {isMobile && !footer ? (
         <>
           <div
@@ -77,7 +55,7 @@ export const Navbar = ({ locale, items = [], footer = false }) => {
         <div
           className={` ${
             footer
-              ? "flex flex-col justify-between gap-y-4 gap-x-20 sm:flex-wrap max-w-[324px]"
+              ? "flex flex-col gap-y-4 h-[110px] gap-x-[30%] sm:flex-wrap  "
               : "flex gap-10 sm:gap-x-5 justify-end"
           } `}
         >

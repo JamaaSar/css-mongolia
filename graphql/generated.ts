@@ -39,6 +39,10 @@ export type AboutUsPageSetting = AboutUsPageSetting_Fields & AcfFieldGroup & Acf
 /** The &quot;AboutUsPageSettingMembers&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
 export type AboutUsPageSettingMembers = AboutUsPageSettingMembers_Fields & AcfFieldGroup & AcfFieldGroupFields & {
   __typename?: 'AboutUsPageSettingMembers';
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
+  boardMembersExcerptMn?: Maybe<Scalars['String']>;
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
+  boardMembersExcerpts?: Maybe<Scalars['String']>;
   /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
   boardMembersTitle?: Maybe<Scalars['String']>;
   /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
@@ -48,6 +52,10 @@ export type AboutUsPageSettingMembers = AboutUsPageSettingMembers_Fields & AcfFi
    * @deprecated Use __typename instead
    */
   fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
+  membersExcerpt?: Maybe<Scalars['String']>;
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
+  membersExcerptMn?: Maybe<Scalars['String']>;
   /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
   membersTitle?: Maybe<Scalars['String']>;
   /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
@@ -56,6 +64,10 @@ export type AboutUsPageSettingMembers = AboutUsPageSettingMembers_Fields & AcfFi
 
 /** Interface representing fields of the ACF &quot;AboutUsPageSettingMembers&quot; Field Group */
 export type AboutUsPageSettingMembers_Fields = {
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
+  boardMembersExcerptMn?: Maybe<Scalars['String']>;
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
+  boardMembersExcerpts?: Maybe<Scalars['String']>;
   /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
   boardMembersTitle?: Maybe<Scalars['String']>;
   /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
@@ -65,6 +77,10 @@ export type AboutUsPageSettingMembers_Fields = {
    * @deprecated Use __typename instead
    */
   fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
+  membersExcerpt?: Maybe<Scalars['String']>;
+  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
+  membersExcerptMn?: Maybe<Scalars['String']>;
   /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
   membersTitle?: Maybe<Scalars['String']>;
   /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;AboutUsPageSettingMembers&quot; Field Group */
@@ -327,7 +343,7 @@ export type AcfFieldGroupFields = {
   fieldGroupName?: Maybe<Scalars['String']>;
 };
 
-/** Connection between the HomePageSettingBanners_Fields type and the MediaItem type */
+/** Connection between the HomePageSetting_Fields type and the MediaItem type */
 export type AcfMediaItemConnectionEdge = Edge & MediaItemConnectionEdge & OneToOneConnection & {
   __typename?: 'AcfMediaItemConnectionEdge';
   /** Opaque reference to the nodes position in the connection. Value can be used with pagination args. */
@@ -3179,6 +3195,10 @@ export type HomePageSetting = AcfFieldGroup & AcfFieldGroupFields & HomePageSett
    * @deprecated Use __typename instead
    */
   fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;HomePageSetting&quot; Field Group */
+  logo?: Maybe<AcfMediaItemConnectionEdge>;
+  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;HomePageSetting&quot; Field Group */
+  logoMn?: Maybe<AcfMediaItemConnectionEdge>;
   /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageSetting&quot; Field Group */
   newsSection?: Maybe<HomePageSettingNewsSection>;
   /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageSetting&quot; Field Group */
@@ -3390,6 +3410,10 @@ export type HomePageSetting_Fields = {
    * @deprecated Use __typename instead
    */
   fieldGroupName?: Maybe<Scalars['String']>;
+  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;HomePageSetting&quot; Field Group */
+  logo?: Maybe<AcfMediaItemConnectionEdge>;
+  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;HomePageSetting&quot; Field Group */
+  logoMn?: Maybe<AcfMediaItemConnectionEdge>;
   /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageSetting&quot; Field Group */
   newsSection?: Maybe<HomePageSettingNewsSection>;
   /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageSetting&quot; Field Group */
@@ -4036,6 +4060,8 @@ export type MemberCustomFields = AcfFieldGroup & AcfFieldGroupFields & MemberCus
   bio?: Maybe<Scalars['String']>;
   /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;MemberCustomFields&quot; Field Group */
   bioMn?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;MemberCustomFields&quot; Field Group */
+  facebook?: Maybe<Scalars['String']>;
   /**
    * The name of the field group
    * @deprecated Use __typename instead
@@ -4055,6 +4081,8 @@ export type MemberCustomFields = AcfFieldGroup & AcfFieldGroupFields & MemberCus
   position?: Maybe<Scalars['String']>;
   /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;MemberCustomFields&quot; Field Group */
   positionMn?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;MemberCustomFields&quot; Field Group */
+  twitter?: Maybe<Scalars['String']>;
 };
 
 /** Interface representing fields of the ACF &quot;MemberCustomFields&quot; Field Group */
@@ -4063,6 +4091,8 @@ export type MemberCustomFields_Fields = {
   bio?: Maybe<Scalars['String']>;
   /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;MemberCustomFields&quot; Field Group */
   bioMn?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;MemberCustomFields&quot; Field Group */
+  facebook?: Maybe<Scalars['String']>;
   /**
    * The name of the field group
    * @deprecated Use __typename instead
@@ -4082,6 +4112,8 @@ export type MemberCustomFields_Fields = {
   position?: Maybe<Scalars['String']>;
   /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;MemberCustomFields&quot; Field Group */
   positionMn?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;MemberCustomFields&quot; Field Group */
+  twitter?: Maybe<Scalars['String']>;
 };
 
 /** Identifier types for retrieving a specific Member. Specifies which unique attribute is used to find an exact Member. */

@@ -8,8 +8,17 @@ import "../../assets/globals.css";
 import { Header } from "@/components/layout/Header/header";
 import { Roboto, Rubik } from "next/font/google";
 import { Footer } from "@/components/layout/Footer/footer";
-import { getMenuActions, getSocialMedia } from "@/lib/graphql-api/queries/home";
-import { MenuItem, SocialMedia } from "graphql/generated";
+import {
+  getLogo,
+  getMenuActions,
+  getSocialMedia,
+} from "@/lib/graphql-api/queries/home";
+import {
+  ContactUsPageSettings,
+  MenuItem,
+  SocialMedia,
+} from "graphql/generated";
+import { getContactUsPageSettings } from "@/lib/graphql-api/queries/about";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -31,6 +40,8 @@ export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
   const items = await getMenuActions();
   const socialItems = (await getSocialMedia()) as SocialMedia[];
+  const logos = await getLogo();
+  const setting = (await getContactUsPageSettings()) as ContactUsPageSettings;
 
   if (!routing.locales.includes(locale)) {
     notFound();
@@ -42,15 +53,32 @@ export default async function LocaleLayout({ children, params }) {
   const menuItems = items as MenuItem[];
 
   return (
-    <html lang={locale} className={`${rubik.variable} ${roboto.variable}`}>
+    <html
+      lang={locale}
+      className={`${rubik.variable} ${roboto.variable} antialiased`}
+    >
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <NextIntlClientProvider messages={messages}>
-        <body>
-          <Header locale={locale} items={menuItems} socialItems={socialItems} />
-          <main className="grow bg-inherit pb-10"> {children}</main>
-          <Footer locale={locale} socialItems={socialItems} />
+        <body className="flex flex-col  min-h-screen">
+          <Header
+            locale={locale}
+            items={menuItems}
+            socialItems={socialItems}
+            logos={logos}
+          />
+          <main className="flex-grow bg-inherit pb-10 animate-fade-in opacity-0">
+            {" "}
+            {children}
+          </main>
+          <Footer
+            locale={locale}
+            socialItems={socialItems}
+            logos={logos}
+            addressMn={setting.addressMn}
+            address={setting.address}
+          />
         </body>
       </NextIntlClientProvider>
     </html>

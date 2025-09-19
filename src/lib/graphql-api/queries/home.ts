@@ -23,6 +23,9 @@ export async function getHomePage(): Promise<HomePageSetting> {
                 mediaItemUrl
               }
             }
+              bannerText
+              bannerTextMn
+
           }
           newsSection {
             newsTitle
@@ -136,9 +139,29 @@ export async function getMenuActions(): Promise<MenuItem[]> {
     }
     `
   );
-  console.log(
-    "data.pageSettings.menuAction.menuItems",
-    data.pageSettings.menuAction.menuItems
-  );
+
   return data.pageSettings.menuAction.menuItems || [];
+}
+export async function getLogo(): Promise<unknown> {
+  const data = await fetchAPI(
+    `
+    query homePageSettingsQuery {
+      homePageSettings {
+        homePageSetting{
+            logo {
+              node {
+                mediaItemUrl
+              }
+            }
+                  logoMn {
+              node {
+                mediaItemUrl
+              }
+            }
+        }
+      }
+    }
+    `
+  );
+  return data.homePageSettings.homePageSetting;
 }

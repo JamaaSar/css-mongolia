@@ -1,5 +1,6 @@
 import {
   AboutUsPageSetting,
+  ContactUsPageSettings,
   Member,
   Project,
   ProjectIdType,
@@ -46,6 +47,10 @@ export async function getAboutUsPageSettings(): Promise<AboutUsPageSetting> {
             boardMembersTitleMn
             membersTitle
             membersTitleMn
+                    boardMembersExcerptMn
+        boardMembersExcerpts
+        membersExcerptMn
+        membersExcerpt
           }
         }
       }
@@ -59,7 +64,7 @@ export async function getTeamMembers(): Promise<Member[]> {
   const data = await fetchAPI(
     `
     query MyQuery {
-      members {
+      members(where: { orderby: { field: DATE, order: ASC } }) {
         edges {
           node {
           databaseId
@@ -68,6 +73,8 @@ export async function getTeamMembers(): Promise<Member[]> {
               name
               isBoardMember
               linkedin
+              twitter
+              facebook
               image {
                 node {
                   mediaItemUrl
@@ -90,4 +97,26 @@ export async function getTeamMembers(): Promise<Member[]> {
     }
   }
   return [];
+}
+
+export async function getContactUsPageSettings(): Promise<
+  ContactUsPageSettings[]
+> {
+  const data = await fetchAPI(
+    `
+    query getContactUsPageSettings {
+      pageSettings {
+        contactUsPageSettings {
+          address
+          addressMn
+          contactUsTitle
+          contactUsTitleMn
+          email
+          phone
+        }
+      }
+    }
+  `
+  );
+  return data.pageSettings.contactUsPageSettings || [];
 }

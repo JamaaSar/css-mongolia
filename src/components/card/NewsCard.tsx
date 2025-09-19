@@ -86,13 +86,13 @@ export const NewsCard = ({
 
   return (
     <div
-      className={`relative w-full rounded-md overflow-hidden shadow-lg cursor-pointer  
+      className={`group relative w-full rounded-md overflow-hidden shadow-lg cursor-pointer transition-transform duration-300 hover:scale-[1.02]
         ${customSize === null ? "h-[270px]" : customSize}
     `}
       onClick={onCardClick}
     >
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center transition-all duration-300 group-hover:scale-105 group-hover:brightness-75"
         style={{ backgroundImage: `url(${backgroundImageUrl()})` }}
       />
       <div className="flex flex-col h-full justify-end">
@@ -105,9 +105,8 @@ export const NewsCard = ({
           <CalendarDateRangeIcon className="w-6 h-6 text-white" />
           <span className="text-sm">{formatDate(date)}</span>
         </div>
-        <div className="absolute bottom-4 left-4 right-0 bg-white opacity-75 p-4 h-[90px]">
-          {/* Title */}
-          <h2 className="font-medium uppercase text-m line-clamp-3 rubik leading-[20px]">
+        <div className="absolute bottom-4 left-4 right-0 bg-white opacity-75 group-hover:opacity-90 p-4 h-[90px] transition-opacity duration-300">
+          <h2 className="font-medium uppercase text-m line-clamp-3 rubik leading-[20px] group-hover:text-primary transition-colors duration-300">
             {title}
           </h2>
 

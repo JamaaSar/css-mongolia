@@ -6,12 +6,9 @@ import { getTranslated } from "@/lib/getTranslated";
 import { Member, Project } from "graphql/generated";
 import { MemberCard } from "@/components/card/MemberCard";
 import { H2 } from "@/components/generic/Typography";
-import { useMediaQuery } from "react-responsive";
 
 export default function MembersPage({ title, members, locale }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const isBigScreen = useMediaQuery({ minWidth: 1550 });
-  const isTablet = useMediaQuery({ maxWidth: 1200 });
 
   const cardsPerPage = 4;
 
@@ -39,16 +36,14 @@ export default function MembersPage({ title, members, locale }) {
           title.boardMembersTitleMn,
           title.boardMembersTitle
         )}
+        descriptionHtml={getTranslated(
+          locale,
+          title.boardMembersExcerptMn,
+          title.boardMembersExcerpt
+        )}
         marginTop={false}
       />
-      <div
-        className="grid grid-cols-3 gap-4"
-        style={{
-          gridTemplateColumns: `${
-            isBigScreen ? "1fr 1fr 1fr" : isTablet ? "1fr" : "1fr 1fr"
-          }`,
-        }}
-      >
+      <div className="grid gap-4 grid-cols-1 xl:grid-cols-2 ">
         {boardMembers.map((data: Member) => (
           <MemberCard
             key={data.databaseId}
@@ -69,11 +64,19 @@ export default function MembersPage({ title, members, locale }) {
               data.memberCustomFields.bio
             )}
             image={data.memberCustomFields.image?.node?.mediaItemUrl}
+            linkedin={data.memberCustomFields.linkedin}
+            twitter={data.memberCustomFields.twitter}
+            facebook={data.memberCustomFields.facebook}
           />
         ))}
       </div>
       <H2
         title={getTranslated(locale, title.membersTitleMn, title.membersTitle)}
+        descriptionHtml={getTranslated(
+          locale,
+          title.membersExcerptMn,
+          title.membersExcerpt
+        )}
       />
       <div className="flex flex-wrap gap-4 items-center justify-center md:justify-start">
         {allMembers.map((data: Member) => (
@@ -96,6 +99,9 @@ export default function MembersPage({ title, members, locale }) {
               data.memberCustomFields.bio
             )}
             image={data.memberCustomFields.image?.node?.mediaItemUrl}
+            linkedin={data.memberCustomFields.linkedin}
+            twitter={data.memberCustomFields.twitter}
+            facebook={data.memberCustomFields.facebook}
           />
         ))}
       </div>

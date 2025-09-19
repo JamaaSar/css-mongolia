@@ -23,39 +23,28 @@ export default async function ProjectPostPage({ params }) {
           <div className="article_news">
             <H2 className="uppercase" title={post.title} />
             <div className="subSection">
-              <div className="authorsSection">
-                {/* {post?.authors && (
-                          <>
-                            {post?.authors?.map((author: any) => (
-                              <a key={Math.random()} className="authors" href={author.authorLink} target="_blank">
-                                {' '}
-                                {author.name}
-                                <span className="custom_comma">,</span>
-                              </a>
-                            ))}
-                          </>
-                        )} */}
-              </div>
               <span className="flex gap-4">
                 <CalendarDateRangeIcon className="w-6 h-6" />
                 {formatDate(post?.dateGmt)}
               </span>
             </div>
-            <img
-              src={post.projectCustomFields.featuredImage.node.mediaItemUrl}
-              alt="featured"
-              className="m-auto"
-            />
-            <div
-              className="articleBody"
-              dangerouslySetInnerHTML={{
-                __html: getTranslated(
-                  locale,
-                  post.projectCustomFields.bodyMn,
-                  post.projectCustomFields.body
-                ),
-              }}
-            ></div>
+            <div className="flex flex-col gap-6 sm:flex-row">
+              <img
+                src={post.projectCustomFields.featuredImage.node.mediaItemUrl}
+                alt="featured"
+                className="m-auto"
+              />
+              <div
+                className="articleBody"
+                dangerouslySetInnerHTML={{
+                  __html: getTranslated(
+                    locale,
+                    post.projectCustomFields.bodyMn,
+                    post.projectCustomFields.body
+                  ),
+                }}
+              ></div>
+            </div>
           </div>
         </div>
       </article>

@@ -3,13 +3,21 @@ import { H2 } from "@/components/generic/Typography";
 import LocationIcon from "@/components/LocationIcon";
 import PhoneIcon from "@/components/PhoneIcon";
 import { getTranslated } from "@/lib/getTranslated";
+import { getContactUsPageSettings } from "@/lib/graphql-api/queries/about";
+import { ContactUsPageSettings } from "graphql/generated";
 
 export default async function ContactUs({ params }) {
   const { locale } = await params;
-
+  const setting = (await getContactUsPageSettings()) as ContactUsPageSettings;
   return (
     <div className="css-home-container m-auto 2xl:container">
-      <H2 title={getTranslated(locale, "ХОЛБОО БАРИХ", "Contact us")} />
+      <H2
+        title={getTranslated(
+          locale,
+          setting.contactUsTitleMn,
+          setting.contactUsTitle
+        )}
+      />
       <div className="grid grid-rows-1 md:grid-cols-2 gap-4 my-10">
         <iframe
           className="w-full h-[300px] md:h-[400px]"
@@ -25,20 +33,16 @@ export default async function ContactUs({ params }) {
               <LocationIcon />
             </span>
             <p className="text-m leading-[20px]">
-              {getTranslated(
-                locale,
-                "Улаанбаатар хот, Сүхбаатар дүүрэг, 1-р хороо, Жуковын гудамж-6, Монгол Экспресс төв, 3 давхар, 312 тоот",
-                "Ulaanbaatar city, Sukhbaatar district, 1st khoroo, Zhukov street-6, Mongolian Express center, 3rd floor, room 312"
-              )}
+              {getTranslated(locale, setting.addressMn, setting.address)}
             </p>
           </div>
           <div className="flex gap-4 m-4 items-center">
             <EmailIcon />
-            <p className="text-m leading-[20px]">info@cssmongolia.org</p>
+            <p className="text-m leading-[20px]">{setting.email}</p>
           </div>
           <div className="flex gap-4 m-4 items-center">
             <PhoneIcon />
-            <p className="text-m leading-[20px]">info@cssmongolia.org</p>
+            <p className="text-m leading-[20px]">{setting.phone}</p>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ export async function getProjects(): Promise<Project[]> {
   const data = await fetchAPI(
     `
     query getAllProjects {
-    projects(first: 1000) {
+    projects(first: 1000,  where: { orderby: { field: DATE, order: DESC } }) {
       edges {
         node {
           databaseId
@@ -36,11 +36,11 @@ export async function getProjects(): Promise<Project[]> {
             body
             bodyMn
             projectLanguage
-           featuredImage {
-            node {
-                mediaItemUrl
+            featuredImage {
+              node {
+                  mediaItemUrl
+              }
             }
-          }
           }
         }
       }
@@ -87,4 +87,39 @@ export async function getProjectFull(
     }
   ).catch((err) => console.error("Failed to fetch news", err));
   return data.project;
+}
+
+export async function getLatestProjectByLanguage(): Promise<{
+  mongolianProject: Project[];
+  englishProject: Project[];
+}> {
+  const allNews = await getProjects();
+
+  const sortedNews = allNews
+    .filter((news) => news.dateGmt)
+    .sort(
+      (a, b) => new Date(b.dateGmt).getTime() - new Date(a.dateGmt).getTime()
+    );
+
+  const getLanguage = (news: Project) =>
+    news.projectCustomFields?.projectLanguage?.toLowerCase().trim();
+
+  const englishProjects = sortedNews
+    .filter((news) => {
+      const lang = getLanguage(news);
+      return lang === "eng" || lang === "both";
+    })
+    .slice(0, 4);
+
+  const mongolianProjects = sortedNews
+    .filter((news) => {
+      const lang = getLanguage(news);
+      return lang === "mn" || lang === "both";
+    })
+    .slice(0, 4);
+
+  return {
+    englishProject: englishProjects,
+    mongolianProject: mongolianProjects,
+  };
 }

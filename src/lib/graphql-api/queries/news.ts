@@ -22,7 +22,7 @@ export async function getNewsPosts(): Promise<News[]> {
   const data = await fetchAPI(
     `
     query getAllNews {
-    newses(first: 1000) {
+    newses(first: 1000,  where: { orderby: { field: DATE, order: DESC } }) {
       edges {
         node {
           databaseId
@@ -39,11 +39,11 @@ export async function getNewsPosts(): Promise<News[]> {
             newsLanguage
             body
             bodyMn
-    featuredImage {
-            node {
-                mediaItemUrl
+            featuredImage {
+              node {
+                  mediaItemUrl
+              }
             }
-          }
           }
         }
       }
@@ -78,10 +78,9 @@ export async function getNewsFull(
           titleMn
           body
           bodyMn
-
-    featuredImage {
+          featuredImage {
             node {
-                mediaItemUrl
+              mediaItemUrl
             }
           }
         }
@@ -95,79 +94,37 @@ export async function getNewsFull(
   return data.news;
 }
 
-export async function getLastThree(): Promise<News[]> {
-  const data = await fetchAPI(
-    `
-    query getLatestNews {
-      newses(where: {orderby: {order: DESC, field: DATE}}, first: 3) {
-        edges {
-          node {
-            databaseId
-            slug
-            date
-            dateGmt
-            newsCustomFields {
-              titleMn
-              title
-              sourceLink
-              sourceName
-              sourceNameMn
-              sourceLanguage
-              newsContentType
-              featuredImage {
-                image {
-                  node {
-                    mediaItemUrl
-                    mediaDetails {
-                      sizes(include: [MEDIUM, MEDIUM_LARGE]) {
-                        name
-                        sourceUrl
-                      }
-                    }
-                  }
-                }
-                imageMn {
-                  node {
-                    mediaItemUrl
-                    mediaDetails {
-                      sizes(include: [MEDIUM, MEDIUM_LARGE]) {
-                        name
-                        sourceUrl
-                      }
-                    }
-                  }
-                }
-                caption
-                captionMn
-              }
-            }
-            featuredImage {
-              node {
-                id
-                mediaItemUrl
-                mediaDetails {
-                  sizes(include: [MEDIUM, MEDIUM_LARGE]) {
-                    name
-                    sourceUrl
-                  }
-                }
-              }
-            }
-            categories {
-              nodes {
-                categoryCustomFields {
-                  name
-                  nameMn
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    `
-  );
-  return data.newses && data.newses.edges
-    ? data.newses.edges.map((x) => x.node as News)
-    : [];
+export async function getLatestNewsByLanguage(): Promise<{
+  english: News[];
+  mongolian: News[];
+}> {
+  const allNews = await getNewsPosts();
+
+  const sortedNews = allNews
+    .filter((news) => news.dateGmt)
+    .sort(
+      (a, b) => new Date(b.dateGmt).getTime() - new Date(a.dateGmt).getTime()
+    );
+
+  const getLanguage = (news: News) =>
+    news.newsCustomFields?.newsLanguage?.toLowerCase().trim();
+
+  const englishNews = sortedNews
+    .filter((news) => {
+      const lang = getLanguage(news);
+      return lang === "eng" || lang === "both";
+    })
+    .slice(0, 4);
+
+  const mongolianNews = sortedNews
+    .filter((news) => {
+      const lang = getLanguage(news);
+      return lang === "mn" || lang === "both";
+    })
+    .slice(0, 4);
+
+  return {
+    english: englishNews,
+    mongolian: mongolianNews,
+  };
 }

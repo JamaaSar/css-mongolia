@@ -46,7 +46,6 @@ body,
 }
 
 .embla-banner {
-  position: absolute;
   top: 0;
   height: 630px;
   margin: auto;
@@ -136,6 +135,36 @@ body,
 
     .pagination_active {
       border: solid 1px #8dc641;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  // Pagination Component
+  .pagination-wrapper {
+    max-width: 400px;
+
+    .paginationButton {
+      width: 67px;
+      &:hover:not([disabled]) {
+        width: 70px;
+      }
+    }
+
+    .pagination {
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+
+      .pageNumber {
+        width: 40px;
+        height: 40px;
+
+        &:hover:not([disabled]) {
+          width: 40px;
+          height: 40px;
+        }
+      }
     }
   }
 }

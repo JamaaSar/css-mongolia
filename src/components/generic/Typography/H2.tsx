@@ -22,11 +22,11 @@ export const H2 = ({
     return (
       <div className="font-bold text-xs md:text-sm uppercase">
         <Link
-          className="self-center flex  items-center gap-2 hover:text-m whitespace-nowrap "
+          className="self-center flex items-center gap-2 group transition-colors duration-200 hover:text-primary"
           href={extraButton.url}
         >
           {extraButton.title}
-          <ArrowRightIcon className="h-4 w-4 sm:h-6 sm:w-6 text-primary" />
+          <ArrowRightIcon className="h-4 w-4 sm:h-6 sm:w-6 text-primary transition-transform duration-200 group-hover:translate-x-1" />
         </Link>
       </div>
     );
@@ -42,7 +42,7 @@ export const H2 = ({
       </div>
       {descriptionHtml && (
         <div
-          className="mt-2 pt-4 mb-5 text-zinc-600"
+          className="mt-2 pt-4 mb-5 "
           dangerouslySetInnerHTML={{ __html: descriptionHtml }}
         ></div>
       )}

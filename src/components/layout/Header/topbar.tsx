@@ -50,30 +50,16 @@ export const Topbar = ({ locale, socialItems }) => {
   return (
     <div className="flex justify-end gap-4 sm:gap-10">
       <div className="flex gap-4">
-        <SocialIcon
-          url={socialItems.facebook}
-          target="_blank"
-          bgColor="transparent"
-          fgColor="#030C13"
-          className={`hover:bg-black/10 rounded-full hidden md:block bg-black/10 `}
-          style={{ height: 40, width: 40 }}
-        />
-        <SocialIcon
-          url={socialItems.linkedin}
-          target="_blank"
-          bgColor="transparent"
-          fgColor="#030C13"
-          className={`hover:bg-black/10 rounded-full hidden md:block bg-black/10 `}
-          style={{ height: 40, width: 40 }}
-        />
-        <SocialIcon
-          url={socialItems.youtube}
-          target="_blank"
-          bgColor="transparent"
-          fgColor="#030C13"
-          className={`hover:bg-black/10 rounded-full hidden md:block bg-black/10 `}
-          style={{ height: 40, width: 40 }}
-        />
+        {["facebook", "linkedin", "youtube"].map((platform) => (
+          <SocialIcon
+            key={platform}
+            url={socialItems[platform]}
+            target="_blank"
+            bgColor="transparent"
+            fgColor="#1A75BC"
+            className="hidden md:block rounded-full bg-[#E8F1F8] hover:bg-primary/20 transition-colors !w-8 !h-8 lg:!w-10 lg:!h-10"
+          />
+        ))}
       </div>
 
       {isMobile ? (
@@ -81,10 +67,10 @@ export const Topbar = ({ locale, socialItems }) => {
           as="div"
           className="relative inline-flex items-center justify-center"
         >
-          <MenuButton className="flex w-full items-center justify-cente bg-secondary text-white font-medium text-center text-sm  py-2 px-4">
+          <MenuButton className="flex w-full items-center justify-cente bg-secondary text-white font-medium text-center text-sm  py-[6px] px-4">
             <div>{availableOptions[locale].label}</div>
             <ChevronDownIcon
-              className="ml-2 -mr-1 h-5 w-5 text-violet-200 hover:text-violet-100"
+              className="ml-2 -mr-1 h-5 w-5 "
               aria-hidden="true"
             />
           </MenuButton>

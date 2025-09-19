@@ -23,7 +23,6 @@ export default async function NewsPage({ params }) {
   const membersTitle = setting.members as AboutUsPageSettingMembers;
   const strategy = setting.strategy as AboutUsPageSettingStrategy[];
   const allMembers = members as Member[];
-  console.log(membersTitle);
   return (
     <div className="css-home-container m-auto 2xl:container">
       <div className="mt-24">

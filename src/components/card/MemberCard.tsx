@@ -11,33 +11,30 @@ export const MemberCard = ({
   bio,
   image,
   position,
-  socialMedia,
+  linkedin,
+  twitter,
+  facebook,
   isBoardMember,
 }: {
   name: string;
   bio: string;
   image: string;
   position: string;
-  socialMedia?: [];
+  linkedin: string;
+  twitter: string;
+  facebook: string;
   isBoardMember: string;
 }) => {
   const isMobile = useMediaQuery({ maxWidth: 620 });
 
-  const router = useRouter();
-  const locale = useLocale();
-  const socialUrls: string[] = [
-    SOCIAL_URLS.FACEBOOK,
-    SOCIAL_URLS.LINKEDIN,
-    SOCIAL_URLS.YOUTUBE,
-  ];
   const isBoardMemberBoolean = isBoardMember === "false" ? false : true;
 
   return (
     <div
       className={`${
         isBoardMemberBoolean
-          ? `w-full  ${isMobile ? "h-[270px] pt-4" : "h-[400px] pt-4"}`
-          : "h-[260px] w-[370px] min-w-[370px] p-4"
+          ? `w-full  ${isMobile ? "h-[470px] pt-4" : "min-h-[400px] pt-4"}`
+          : "h-[520px] w-[370px] min-w-[370px] p-4"
       } rounded-md overflow-hidden shadow-lg cursor-pointer bg-white `}
     >
       <div className="flex relative ">
@@ -58,26 +55,46 @@ export const MemberCard = ({
             <p className="text-lg uppercase font-semibold ">{name}</p>
             <span className="text-sm text-primary">{position}</span>
             <div className="flex gap-2">
-              {socialUrls.map((x, idx) => {
-                return (
-                  <SocialIcon
-                    url={x}
-                    target="_blank"
-                    key={idx}
-                    bgColor="transparent"
-                    fgColor="#1A75BC"
-                    className={`hover:bg-black/10 rounded-full hidden md:block bg-[#E8F1F8] `}
-                    style={{ height: 32, width: 32 }}
-                  />
-                );
-              })}
+              {linkedin && (
+                <SocialIcon
+                  network="linkedin"
+                  url={linkedin}
+                  target="_blank"
+                  bgColor="transparent"
+                  fgColor="#1A75BC"
+                  className={`hover:bg-black/10 rounded-full hidden md:block bg-[#E8F1F8] `}
+                  style={{ height: 32, width: 32 }}
+                />
+              )}
+              {twitter && (
+                <SocialIcon
+                  network="x"
+                  url={twitter}
+                  target="_blank"
+                  bgColor="transparent"
+                  fgColor="#1A75BC"
+                  className={`hover:bg-black/10 rounded-full hidden md:block bg-[#E8F1F8] `}
+                  style={{ height: 32, width: 32 }}
+                />
+              )}
+              {facebook && (
+                <SocialIcon
+                  network="facebook"
+                  url={facebook}
+                  target="_blank"
+                  bgColor="transparent"
+                  fgColor="#1A75BC"
+                  className={`hover:bg-black/10 rounded-full hidden md:block bg-[#E8F1F8] `}
+                  style={{ height: 32, width: 32 }}
+                />
+              )}
             </div>
           </div>
           {isBoardMemberBoolean && (
             <div className="px-4">
               <p
                 className={`text-m mt-1 leading-[20px] ${
-                  isMobile && "absolute -bottom-26 left-6 w-[90%]"
+                  isMobile && "absolute top-35 left-6 w-[90%]"
                 }`}
               >
                 {bio}

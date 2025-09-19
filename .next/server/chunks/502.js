@@ -1,0 +1,1 @@
+"use strict";exports.id=502,exports.ids=[502],exports.modules={8502:(a,b,c)=>{c.d(b,{p3:()=>d,ze:()=>e});var d=function(a){return a.DatabaseId="DATABASE_ID",a.Id="ID",a.Slug="SLUG",a.Uri="URI",a}({}),e=function(a){return a.DatabaseId="DATABASE_ID",a.Id="ID",a.Slug="SLUG",a.Uri="URI",a}({})}};

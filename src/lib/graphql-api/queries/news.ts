@@ -32,8 +32,6 @@ export async function getNewsPosts(): Promise<News[]> {
           newsCustomFields {
             titleMn
             title
-            excerpt
-            excerptMn
             sourceLink
             sourceName
             sourceNameMn
@@ -41,16 +39,11 @@ export async function getNewsPosts(): Promise<News[]> {
             newsLanguage
             body
             bodyMn
-            featuredImage {
-              node {
-                mediaDetails {
-                  sizes(include: [MEDIUM, MEDIUM_LARGE]) {
-                    sourceUrl
-                    name
-                  }
-                }
-              }
+    featuredImage {
+            node {
+                mediaItemUrl
             }
+          }
           }
         }
       }
@@ -85,16 +78,10 @@ export async function getNewsFull(
           titleMn
           body
           bodyMn
-          excerpt
-          excerptMn
-          featuredImage {
+
+    featuredImage {
             node {
-              mediaDetails {
-                sizes(include: [MEDIUM, MEDIUM_LARGE, LARGE]) {
-                  name
-                  sourceUrl
-                }
-              }
+                mediaItemUrl
             }
           }
         }

@@ -31,7 +31,7 @@ export const ProjectCard = ({
     >
       <div className="relative">
         <div
-          className="bg-cover bg-center  w-full h-[146px]"
+          className="bg-cover bg-center  w-full h-[480px]"
           style={{ backgroundImage: `url(${featuredImage})` }}
         >
           <div className="flex flex-col h-full justify-end">
@@ -44,11 +44,11 @@ export const ProjectCard = ({
       <div className=" bottom-4 left-4 right-0 bg-white opacity-75 p-4 h-[130px]">
         <h2 className="font-medium uppercase text-m line-clamp-2 rubik leading-[20px]"></h2>
 
-        <div className="flex gap-3 text-xs font-semibold text-primary">
+        {/* <div className="flex gap-3 text-xs font-semibold text-primary">
           <span>#economy</span>
           <span>#economy</span>
           <span>#economy</span>
-        </div>
+        </div> */}
 
         <p className="text-m mt-1 line-clamp-4 leading-[20px]">{excerpt}</p>
       </div>

@@ -36,16 +36,11 @@ export async function getProjects(): Promise<Project[]> {
             body
             bodyMn
             projectLanguage
-            featuredImage {
-              node {
-                mediaDetails {
-                  sizes(include: [MEDIUM, MEDIUM_LARGE]) {
-                    sourceUrl
-                    name
-                  }
-                }
-              }
+           featuredImage {
+            node {
+                mediaItemUrl
             }
+          }
           }
         }
       }
@@ -80,12 +75,7 @@ export async function getProjectFull(
           bodyMn
           featuredImage {
             node {
-              mediaDetails {
-                sizes(include: [MEDIUM, MEDIUM_LARGE, LARGE]) {
-                  name
-                  sourceUrl
-                }
-              }
+                mediaItemUrl
             }
           }
         }

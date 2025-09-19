@@ -4920,10 +4920,6 @@ export type NewsCustomFields = AcfFieldGroup & AcfFieldGroupFields & NewsCustomF
   body?: Maybe<Scalars['String']>;
   /** Field of the &quot;wysiwyg&quot; Field Type added to the schema as part of the &quot;NewsCustomFields&quot; Field Group */
   bodyMn?: Maybe<Scalars['String']>;
-  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;NewsCustomFields&quot; Field Group */
-  excerpt?: Maybe<Scalars['String']>;
-  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;NewsCustomFields&quot; Field Group */
-  excerptMn?: Maybe<Scalars['String']>;
   /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NewsCustomFields&quot; Field Group */
   featuredImage?: Maybe<AcfMediaItemConnectionEdge>;
   /**
@@ -4959,10 +4955,6 @@ export type NewsCustomFields_Fields = {
   body?: Maybe<Scalars['String']>;
   /** Field of the &quot;wysiwyg&quot; Field Type added to the schema as part of the &quot;NewsCustomFields&quot; Field Group */
   bodyMn?: Maybe<Scalars['String']>;
-  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;NewsCustomFields&quot; Field Group */
-  excerpt?: Maybe<Scalars['String']>;
-  /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;NewsCustomFields&quot; Field Group */
-  excerptMn?: Maybe<Scalars['String']>;
   /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;NewsCustomFields&quot; Field Group */
   featuredImage?: Maybe<AcfMediaItemConnectionEdge>;
   /**

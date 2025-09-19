@@ -19,7 +19,7 @@ export default function ProjectPage({ projects, locale }) {
   };
 
   const currentProjects = projects.slice(indexOfFirstOrg, indexOfLastOrg);
-
+  console.log(currentProjects);
   return (
     <>
       <div className="flex flex-wrap gap-4">
@@ -35,11 +35,7 @@ export default function ProjectPage({ projects, locale }) {
               data.projectCustomFields.excerpt
             )}
             featuredImage={
-              data.projectCustomFields.featuredImage?.node?.mediaDetails
-                .sizes !== null
-                ? data.projectCustomFields.featuredImage.node?.mediaDetails
-                    ?.sizes[0].sourceUrl
-                : ""
+              data.projectCustomFields.featuredImage?.node?.mediaItemUrl
             }
           />
         ))}

@@ -34,17 +34,8 @@ export default function NewsPage({ news, locale }) {
               data.newsCustomFields.titleMn,
               data.newsCustomFields.title
             )}
-            excerpt={getTranslated(
-              locale,
-              data.newsCustomFields.excerptMn,
-              data.newsCustomFields.excerpt
-            )}
             featuredImage={
-              data.newsCustomFields.featuredImage?.node?.mediaDetails.sizes !==
-              null
-                ? data.newsCustomFields.featuredImage.node?.mediaDetails
-                    ?.sizes[0].sourceUrl
-                : ""
+              data.newsCustomFields.featuredImage?.node?.mediaItemUrl
             }
             newsContentType={data.newsCustomFields.newsContentType}
             newsLanguage={data.newsCustomFields.newsLanguage}

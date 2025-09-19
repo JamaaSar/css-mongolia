@@ -4,6 +4,7 @@ import { H2 } from "@/components/generic/Typography";
 import { getTranslated } from "@/lib/getTranslated";
 import { CalendarDateRangeIcon } from "@heroicons/react/24/solid";
 import { formatDate } from "@/lib/formatDate";
+import Image from "next/image";
 
 export default async function NewsPostPage({ params }) {
   const { slug, locale } = await params;
@@ -48,6 +49,12 @@ export default async function NewsPostPage({ params }) {
                   {formatDate(post?.dateGmt)}
                 </span>
               </div>
+              <img
+                src={post.newsCustomFields.featuredImage.node.mediaItemUrl}
+                alt="featured"
+                className="m-auto"
+              />
+
               <div
                 className="articleBody relative"
                 dangerouslySetInnerHTML={{

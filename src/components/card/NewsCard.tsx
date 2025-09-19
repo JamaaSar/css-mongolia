@@ -18,7 +18,6 @@ export const NewsCard = ({
   desiredSlug,
   title,
   customSize,
-  excerpt,
   featuredImage,
   newsContentType,
   newsLanguage,
@@ -31,7 +30,6 @@ export const NewsCard = ({
   desiredSlug?: string;
   title: string;
   customSize?: string;
-  excerpt: string;
   featuredImage: string;
   newsContentType: string;
   newsLanguage: string;
@@ -107,21 +105,18 @@ export const NewsCard = ({
           <CalendarDateRangeIcon className="w-6 h-6 text-white" />
           <span className="text-sm">{formatDate(date)}</span>
         </div>
-        <div className="absolute bottom-4 left-4 right-0 bg-white opacity-75 p-4 h-[130px]">
+        <div className="absolute bottom-4 left-4 right-0 bg-white opacity-75 p-4 h-[90px]">
           {/* Title */}
-          <h2 className="font-medium uppercase text-m line-clamp-2 rubik leading-[20px]">
+          <h2 className="font-medium uppercase text-m line-clamp-3 rubik leading-[20px]">
             {title}
           </h2>
 
           {/* Hashtags */}
-          <div className="flex gap-3 text-xs font-semibold text-primary">
+          {/* <div className="flex gap-3 text-xs font-semibold text-primary">
             <span>#economy</span>
             <span>#economy</span>
             <span>#economy</span>
-          </div>
-
-          {/* Description */}
-          <p className="text-m mt-1 line-clamp-2 leading-[20px]">{excerpt}</p>
+          </div> */}
         </div>
       </div>
     </div>

@@ -12,7 +12,6 @@ export const Navbar = ({ locale, items = [], footer = false }) => {
   const t = useTranslations();
   const cleanedPath = pathname.replace(`/${locale}`, "") || "/";
   const isMobile = useMediaQuery({ maxWidth: 820 });
-  console.log("items in navbar", items);
   const menuItems = [
     { title: t("menu.homepage"), href: "/", isActive: cleanedPath === "/" },
     {
@@ -25,11 +24,11 @@ export const Navbar = ({ locale, items = [], footer = false }) => {
       href: "/project",
       isActive: cleanedPath.includes("project"),
     },
-    {
-      title: t("menu.resource"),
-      href: "/resource",
-      isActive: cleanedPath.includes("resource"),
-    },
+    // {
+    //   title: t("menu.resource"),
+    //   href: "/resource",
+    //   isActive: cleanedPath.includes("resource"),
+    // },
     {
       title: t("menu.about-us"),
       href: "/about-us",

@@ -1,6 +1,6 @@
 "use client";
 import { JSX, useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation"; // Adjust the path accordingly
 
 type MenuItemProps = {
   title: string | JSX.Element;

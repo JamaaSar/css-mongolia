@@ -41,6 +41,11 @@ export default async function ProjectPostPage({ params }) {
                 {formatDate(post?.dateGmt)}
               </span>
             </div>
+            <img
+              src={post.projectCustomFields.featuredImage.node.mediaItemUrl}
+              alt="featured"
+              className="m-auto"
+            />
             <div
               className="articleBody"
               dangerouslySetInnerHTML={{

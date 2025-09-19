@@ -35,8 +35,6 @@ export async function getHomePage(): Promise<HomePageSetting> {
                   dateGmt
                   databaseId
                   newsCustomFields {
-                    excerpt
-                    excerptMn
                     newsContentType
                     newsLanguage
                     sourceLink
@@ -44,16 +42,11 @@ export async function getHomePage(): Promise<HomePageSetting> {
                     sourceNameMn
                     title
                     titleMn
-                    featuredImage {
-                      node {
-                        mediaDetails {
-                          sizes(include: [MEDIUM, MEDIUM_LARGE]) {
-                            sourceUrl
-                            name
-                          }
-                        }
-                      }
-                    }
+             featuredImage {
+            node {
+                mediaItemUrl
+            }
+          }
                   }
                 }
               }

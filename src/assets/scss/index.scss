@@ -27,6 +27,8 @@ body,
   transform: translate3d(0, 0, 0);
   flex: 0 0 var(--slide-size);
   min-width: 100%;
+  object-fit: cover;
+  object-position: top;
   height: 630px;
   padding-left: var(--slide-spacing);
 }
@@ -206,8 +208,6 @@ body,
       }
     }
     figure {
-      width: 98% !important;
-
       img {
         max-width: 100%;
         width: 100%;

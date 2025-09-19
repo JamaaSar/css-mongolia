@@ -8,7 +8,7 @@ import { Project } from "graphql/generated";
 
 export default function ProjectPage({ projects, locale }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 4;
+  const cardsPerPage = 12;
 
   const indexOfLastOrg = currentPage * cardsPerPage;
   const indexOfFirstOrg = indexOfLastOrg - cardsPerPage;
@@ -19,7 +19,6 @@ export default function ProjectPage({ projects, locale }) {
   };
 
   const currentProjects = projects.slice(indexOfFirstOrg, indexOfLastOrg);
-  console.log(currentProjects);
   return (
     <>
       <div className="flex flex-wrap gap-4">

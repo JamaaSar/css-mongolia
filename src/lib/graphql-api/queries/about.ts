@@ -67,6 +67,7 @@ export async function getTeamMembers(): Promise<Member[]> {
               nameMn
               name
               isBoardMember
+              linkedin
               image {
                 node {
                   mediaItemUrl

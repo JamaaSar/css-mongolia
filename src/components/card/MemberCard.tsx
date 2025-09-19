@@ -36,13 +36,11 @@ export const MemberCard = ({
     <div
       className={`${
         isBoardMemberBoolean
-          ? `w-full  ${
-              isMobile ? "h-[270px] pt-4" : "h-[220px] content-center "
-            }`
-          : "h-[240px] w-[370px] min-w-[370px] p-4"
+          ? `w-full  ${isMobile ? "h-[270px] pt-4" : "h-[400px] pt-4"}`
+          : "h-[260px] w-[370px] min-w-[370px] p-4"
       } rounded-md overflow-hidden shadow-lg cursor-pointer bg-white `}
     >
-      <div className={`flex relative`}>
+      <div className="flex relative ">
         <div
           className={`${
             isBoardMemberBoolean
@@ -78,7 +76,7 @@ export const MemberCard = ({
           {isBoardMemberBoolean && (
             <div className="px-4">
               <p
-                className={`text-m mt-1 line-clamp-5 leading-[20px] ${
+                className={`text-m mt-1 leading-[20px] ${
                   isMobile && "absolute -bottom-26 left-6 w-[90%]"
                 }`}
               >
@@ -90,7 +88,7 @@ export const MemberCard = ({
       </div>
       {!isBoardMemberBoolean && (
         <div className="px-4">
-          <p className="text-m mt-1 line-clamp-6 leading-[20px]">{bio}</p>
+          <p className="text-m mt-1  leading-[20px]">{bio}</p>
         </div>
       )}
     </div>

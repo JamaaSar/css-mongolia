@@ -4046,6 +4046,8 @@ export type MemberCustomFields = AcfFieldGroup & AcfFieldGroupFields & MemberCus
   /** Field of the &quot;radio&quot; Field Type added to the schema as part of the &quot;MemberCustomFields&quot; Field Group */
   isBoardMember?: Maybe<Scalars['String']>;
   /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;MemberCustomFields&quot; Field Group */
+  linkedin?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;MemberCustomFields&quot; Field Group */
   name?: Maybe<Scalars['String']>;
   /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;MemberCustomFields&quot; Field Group */
   nameMn?: Maybe<Scalars['String']>;
@@ -4070,6 +4072,8 @@ export type MemberCustomFields_Fields = {
   image?: Maybe<AcfMediaItemConnectionEdge>;
   /** Field of the &quot;radio&quot; Field Type added to the schema as part of the &quot;MemberCustomFields&quot; Field Group */
   isBoardMember?: Maybe<Scalars['String']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;MemberCustomFields&quot; Field Group */
+  linkedin?: Maybe<Scalars['String']>;
   /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;MemberCustomFields&quot; Field Group */
   name?: Maybe<Scalars['String']>;
   /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;MemberCustomFields&quot; Field Group */

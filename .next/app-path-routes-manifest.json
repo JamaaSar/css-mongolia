@@ -1,0 +1,13 @@
+{
+  "/favicon.ico/route": "/favicon.ico",
+  "/_not-found/page": "/_not-found",
+  "/[locale]/news/[slug]/page": "/[locale]/news/[slug]",
+  "/[locale]/project/page": "/[locale]/project",
+  "/[locale]/about-us/page": "/[locale]/about-us",
+  "/[locale]/news/page": "/[locale]/news",
+  "/[locale]/page": "/[locale]",
+  "/[locale]/project/[slug]/page": "/[locale]/project/[slug]",
+  "/[locale]/contact-us/page": "/[locale]/contact-us",
+  "/[locale]/resource/page": "/[locale]/resource",
+  "/[locale]/resource/[slug]/page": "/[locale]/resource/[slug]"
+}

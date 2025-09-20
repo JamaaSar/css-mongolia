@@ -2,13 +2,12 @@
 
 import { Navbar } from "./navbar";
 import { Topbar } from "./topbar";
-import logo from "../../../assets/logo.png";
 import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "@/i18n/navigation";
 import { getTranslated } from "@/lib/getTranslated";
 
-export const Header = ({ locale, items, socialItems, logos }) => {
+export const Header = ({ locale, socialItems, logos }) => {
   const isMobile = useMediaQuery({ maxWidth: 640 });
 
   return (
@@ -19,7 +18,7 @@ export const Header = ({ locale, items, socialItems, logos }) => {
             <Topbar locale={locale} socialItems={socialItems} />
           </div>
           <div className="flex justify-between w-full items-center">
-            <Link href={`/${locale}`}>
+            <Link href="/">
               <Image
                 src={getTranslated(
                   locale,
@@ -33,7 +32,7 @@ export const Header = ({ locale, items, socialItems, logos }) => {
               />
             </Link>
 
-            <Navbar locale={locale} footer={false} items={items} />
+            <Navbar locale={locale} footer={false} />
           </div>
         </>
       ) : (
@@ -54,7 +53,7 @@ export const Header = ({ locale, items, socialItems, logos }) => {
 
           <div className="flex flex-col gap-8 justify-end">
             <Topbar locale={locale} socialItems={socialItems} />
-            <Navbar locale={locale} footer={false} items={items} />
+            <Navbar locale={locale} footer={false} />
           </div>
         </>
       )}

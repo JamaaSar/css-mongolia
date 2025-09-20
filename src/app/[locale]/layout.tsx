@@ -8,16 +8,8 @@ import "../../assets/globals.css";
 import { Header } from "@/components/layout/Header/header";
 import { Roboto, Rubik } from "next/font/google";
 import { Footer } from "@/components/layout/Footer/footer";
-import {
-  getLogo,
-  getMenuActions,
-  getSocialMedia,
-} from "@/lib/graphql-api/queries/home";
-import {
-  ContactUsPageSettings,
-  MenuItem,
-  SocialMedia,
-} from "graphql/generated";
+import { getLogo, getSocialMedia } from "@/lib/graphql-api/queries/home";
+import { ContactUsPageSettings, SocialMedia } from "graphql/generated";
 import { getContactUsPageSettings } from "@/lib/graphql-api/queries/about";
 
 export function generateStaticParams() {
@@ -38,7 +30,6 @@ const roboto = Roboto({
 
 export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
-  const items = await getMenuActions();
   const socialItems = (await getSocialMedia()) as SocialMedia[];
   const logos = await getLogo();
   const setting = (await getContactUsPageSettings()) as ContactUsPageSettings;
@@ -50,7 +41,6 @@ export default async function LocaleLayout({ children, params }) {
   setRequestLocale(locale);
 
   const messages = await getMessages();
-  const menuItems = items as MenuItem[];
 
   return (
     <html
@@ -62,12 +52,7 @@ export default async function LocaleLayout({ children, params }) {
       </head>
       <NextIntlClientProvider messages={messages}>
         <body className="flex flex-col  min-h-screen">
-          <Header
-            locale={locale}
-            items={menuItems}
-            socialItems={socialItems}
-            logos={logos}
-          />
+          <Header locale={locale} socialItems={socialItems} logos={logos} />
           <main className="flex-grow bg-inherit pb-10 animate-fade-in opacity-0">
             {" "}
             {children}

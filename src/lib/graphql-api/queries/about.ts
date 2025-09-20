@@ -2,8 +2,6 @@ import {
   AboutUsPageSetting,
   ContactUsPageSettings,
   Member,
-  Project,
-  ProjectIdType,
 } from "graphql/generated";
 import { fetchAPI } from "../api";
 

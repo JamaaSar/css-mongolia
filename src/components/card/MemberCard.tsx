@@ -1,8 +1,5 @@
 "use client";
 
-import { SOCIAL_URLS } from "@/lib/consts/urls";
-import { useLocale } from "next-intl";
-import { useRouter } from "next/navigation";
 import { useMediaQuery } from "react-responsive";
 import { SocialIcon } from "react-social-icons";
 

@@ -1,4 +1,4 @@
-name: Build and Push Built Next.js App
+name: Build Next.js App
 
 on:
   push:
@@ -6,11 +6,11 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -22,31 +22,10 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
+      - name: Generate GraphQL types
+        run: yarn generate
+
       - name: Build Next.js app
         env:
           WORDPRESS_API_URL: ${{ secrets.WORDPRESS_API_URL }}
         run: yarn build
-
-      - name: Prepare deploy folder
-        run: |
-          rm -rf deploy
-          mkdir deploy
-          cp -r .next public package.json yarn.lock next.config.js deploy/
-          # Copy your source folders needed for runtime, adjust if needed:
-          cp -r pages app components deploy/ || true
-
-      - name: Push deploy branch
-        uses: actions/configure-git@v3
-        with:
-          name: github-actions
-          email: github-actions@github.com
-
-      - name: Commit and push deploy folder to deploy branch
-        run: |
-          git checkout --orphan deploy
-          git reset --hard
-          git clean -fdx
-          cp -r deploy/* .
-          git add .
-          git commit -m "Deploy built Next.js app"
-          git push -f origin deploy

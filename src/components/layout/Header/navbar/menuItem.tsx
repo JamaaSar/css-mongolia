@@ -14,7 +14,7 @@ export const MenuItem = (props: MenuItemProps) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [delayHandler, setDelayHandler] = useState(null);
 
-  const handleMouseEnter = (event) => {
+  const handleMouseEnter = () => {
     setIsDropdownOpen(true);
     clearTimeout(delayHandler);
   };

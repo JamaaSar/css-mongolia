@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Pagination from "@/components/generic/Pagination";
 import { getTranslated } from "@/lib/getTranslated";
-import { Member, Project } from "graphql/generated";
+import { Member } from "graphql/generated";
 import { MemberCard } from "@/components/card/MemberCard";
 import { H2 } from "@/components/generic/Typography";
 

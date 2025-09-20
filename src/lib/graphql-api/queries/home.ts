@@ -1,11 +1,5 @@
 import { fetchAPI } from "../api";
-import {
-  AboutUsPageSetting,
-  HomePageSetting,
-  MenuAction,
-  MenuItem,
-  SocialMedia,
-} from "graphql/generated";
+import { HomePageSetting, MenuItem, SocialMedia } from "graphql/generated";
 
 export async function getHomePage(): Promise<HomePageSetting> {
   const data = await fetchAPI(

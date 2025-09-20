@@ -4,7 +4,6 @@ import { H2 } from "@/components/generic/Typography";
 import { getTranslated } from "@/lib/getTranslated";
 import { CalendarDateRangeIcon } from "@heroicons/react/24/solid";
 import { formatDate } from "@/lib/formatDate";
-import Image from "next/image";
 
 export default async function NewsPostPage({ params }) {
   const { slug, locale } = await params;

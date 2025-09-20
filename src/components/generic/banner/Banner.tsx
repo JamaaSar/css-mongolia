@@ -6,13 +6,10 @@ import { useEffect } from "react";
 
 type Banner = {
   banners?: HomePageSettingBanners[];
-  bottomText?: {
-    left?: string;
-    right?: string;
-  };
+
   options?: EmblaOptionsType;
 };
-export const Banner = ({ banners, bottomText, options }: Banner) => {
+export const Banner = ({ banners, options }: Banner) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
 
   useEffect(() => {

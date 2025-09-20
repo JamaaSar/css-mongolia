@@ -7,7 +7,7 @@ import { useMediaQuery } from "react-responsive";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { getMenuItems } from "@/lib/types/MenuItems";
 
-export const Navbar = ({ locale, items = [], footer = false }) => {
+export const Navbar = ({ locale, footer = false }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const t = useTranslations();

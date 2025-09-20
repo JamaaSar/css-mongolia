@@ -6,32 +6,19 @@ import { getTranslated } from "@/lib/getTranslated";
 import { getHomePage } from "@/lib/graphql-api/queries/home";
 import { getLatestNewsByLanguage } from "@/lib/graphql-api/queries/news";
 import { getLatestProjectByLanguage } from "@/lib/graphql-api/queries/project";
-import { News, Project } from "graphql/generated";
 
 export default async function HomePage({ params }) {
   const { locale } = await params;
 
   const data = await getHomePage();
-  const news = data.newsSection.featuredNews.nodes as News[];
-  const projects = data.projectSection.featuredProject.nodes as Project[];
   const { english, mongolian } = await getLatestNewsByLanguage();
   const { englishProject, mongolianProject } =
     await getLatestProjectByLanguage();
-
-  const filteredNews = news.filter((item) => {
-    const lang = item.newsCustomFields.newsLanguage;
-    return lang === "both" || lang === locale;
-  });
 
   const lastFourNews =
     locale === "en" ? english : locale === "mn" ? mongolian : [];
   const lastFourProjects =
     locale === "en" ? englishProject : locale === "mn" ? mongolianProject : [];
-
-  const filteredProjects = projects.filter((item) => {
-    const lang = item.projectCustomFields.projectLanguage;
-    return lang === "both" || lang === locale;
-  });
 
   return (
     <div>

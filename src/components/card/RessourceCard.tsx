@@ -1,7 +1,6 @@
 "use client";
 
 import { CalendarDateRangeIcon } from "@heroicons/react/24/solid";
-import { useState } from "react";
 
 export const RessourceCard = ({
   title,
@@ -12,8 +11,6 @@ export const RessourceCard = ({
   excerpt: string;
   featuredImage: string;
 }) => {
-  const [thumbnailURL, setThumbnailURL] = useState("");
-
   //   useEffect(() => {
   //     fetch("https://noembed.com/embed?url=" + sourceLink)
   //       .then((res) => {

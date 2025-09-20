@@ -1,5 +1,4 @@
 "use client";
-import { SOCIAL_URLS } from "../../../lib/consts/urls";
 import { SocialIcon } from "react-social-icons";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";

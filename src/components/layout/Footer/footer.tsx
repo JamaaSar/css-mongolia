@@ -1,19 +1,14 @@
 "use client";
 
-import { Navbar } from "../Header/navbar";
-import logo from "../../../assets/logo.png";
 import iso from "../../../assets/iso.png";
 import Image from "next/image";
 import { SocialIcon } from "react-social-icons";
-import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
 import { getTranslated } from "@/lib/getTranslated";
 import { getMenuItems } from "@/lib/types/MenuItems";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { MenuItem } from "../Header/navbar/menuItem";
-import { getContactUsPageSettings } from "@/lib/graphql-api/queries/about";
-import { ContactUsPageSettings } from "graphql/generated";
 
 export const Footer = ({ locale, socialItems, logos, address, addressMn }) => {
   const pathname = usePathname();
@@ -29,7 +24,7 @@ export const Footer = ({ locale, socialItems, logos, address, addressMn }) => {
  `}
       >
         <div className="flex flex-col gap-4">
-          <Link href={`/${locale}`}>
+          <Link href="/">
             <Image
               src={getTranslated(
                 locale,
@@ -57,17 +52,17 @@ export const Footer = ({ locale, socialItems, logos, address, addressMn }) => {
             ))}
           </div>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 uppercase">
           {menuItems.slice(0, 3).map((item, i) => (
             <MenuItem key={i} {...item} />
           ))}
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 uppercase">
           {menuItems.slice(3, menuItems.length).map((item, i) => (
             <MenuItem key={i} {...item} />
           ))}
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 w-[200px] ">
           <Image
             src={iso.src}
             width={200}

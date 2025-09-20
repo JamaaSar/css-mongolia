@@ -30,7 +30,7 @@ export const MemberCard = ({
     <div
       className={`${
         isBoardMemberBoolean
-          ? `w-full  ${isMobile ? "h-[470px] pt-4" : "min-h-[400px] pt-4"}`
+          ? `w-full  ${isMobile ? "min-h-[700px] pt-4" : "min-h-[400px] pt-4"}`
           : "h-[520px] w-[370px] min-w-[370px] p-4"
       } rounded-md overflow-hidden shadow-lg cursor-pointer bg-white `}
     >
@@ -87,11 +87,10 @@ export const MemberCard = ({
               )}
             </div>
           </div>
-          {isBoardMemberBoolean && (
+          {isBoardMemberBoolean && !isMobile && (
             <div className="px-4">
               <p
-                className={`text-m mt-1 leading-[20px] ${
-                  isMobile && "absolute top-35 left-6 w-[90%]"
+                className={`text-m mt-1 leading-[20px] 
                 }`}
               >
                 {bio}
@@ -100,6 +99,11 @@ export const MemberCard = ({
           )}
         </div>
       </div>
+      {isBoardMemberBoolean && isMobile && (
+        <div className="px-4">
+          <p className={`text-m mt-1 leading-[20px] w-[90%]`}>{bio}</p>
+        </div>
+      )}
       {!isBoardMemberBoolean && (
         <div className="px-4">
           <p className="text-m mt-1  leading-[20px]">{bio}</p>

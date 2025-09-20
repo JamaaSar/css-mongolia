@@ -30,7 +30,7 @@ export const MemberCard = ({
     <div
       className={`${
         isBoardMemberBoolean
-          ? `w-full  ${isMobile ? "min-h-[700px] pt-4" : "min-h-[400px] pt-4"}`
+          ? `w-full  ${isMobile ? "h-full py-4" : "min-h-[400px] pt-4"}`
           : "h-[520px] w-[370px] min-w-[370px] p-4"
       } rounded-md overflow-hidden shadow-lg cursor-pointer bg-white `}
     >

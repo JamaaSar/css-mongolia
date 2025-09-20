@@ -5,6 +5,7 @@ import { getTranslated } from "@/lib/getTranslated";
 import { CalendarDateRangeIcon } from "@heroicons/react/24/solid";
 import { formatDate } from "@/lib/formatDate";
 import { getProjectFull } from "@/lib/graphql-api/queries/project";
+import { redirect } from "@/i18n/navigation";
 
 export default async function ProjectPostPage({ params }) {
   const { slug, locale } = await params;
@@ -14,7 +15,18 @@ export default async function ProjectPostPage({ params }) {
     slug,
     isPostId ? ProjectIdType.DatabaseId : ProjectIdType.Slug
   );
+  const projectLanguage = post?.projectCustomFields?.projectLanguage ?? null;
 
+  if (
+    projectLanguage &&
+    projectLanguage !== "both" &&
+    projectLanguage !== locale
+  ) {
+    return redirect({
+      href: "/news",
+      locale: locale,
+    });
+  }
   return (
     <div>
       <article>

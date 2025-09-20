@@ -31,6 +31,7 @@ export const Topbar = ({ locale, socialItems }) => {
   const router = useRouter();
   const pathname = usePathname();
   const isMobile = useMediaQuery({ maxWidth: 724 });
+
   const handleLanguageChange = (newLocale: string) => {
     if (newLocale === locale) return;
 

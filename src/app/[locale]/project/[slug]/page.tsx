@@ -20,30 +20,32 @@ export default async function ProjectPostPage({ params }) {
       <article>
         {/* <BreadCrumb breadCrumbItems={breadCrumbItems} /> */}
         <div className="css-container 2xl:container m-auto">
-          <div className="article_news">
-            <H2 className="uppercase" title={post.title} />
-            <div className="subSection">
-              <span className="flex gap-4">
-                <CalendarDateRangeIcon className="w-6 h-6" />
-                {formatDate(post?.dateGmt)}
-              </span>
-            </div>
-            <div className="flex flex-col gap-6 sm:flex-row">
-              <img
-                src={post.projectCustomFields.featuredImage.node.mediaItemUrl}
-                alt="featured"
-                className="m-auto"
-              />
-              <div
-                className="articleBody"
-                dangerouslySetInnerHTML={{
-                  __html: getTranslated(
-                    locale,
-                    post.projectCustomFields.bodyMn,
-                    post.projectCustomFields.body
-                  ),
-                }}
-              ></div>
+          <div className="news-main-content">
+            <div className="article_news">
+              <H2 className="uppercase" title={post.title} />
+              <div className="subSection">
+                <span className="flex gap-4">
+                  <CalendarDateRangeIcon className="w-6 h-6" />
+                  {formatDate(post?.dateGmt)}
+                </span>
+              </div>
+              <div className="flex flex-col gap-6 xl:flex-row  w-full items-start">
+                <img
+                  src={post.projectCustomFields.featuredImage.node.mediaItemUrl}
+                  alt="featured"
+                  className="mx-auto content-start max-w-[460px]"
+                />
+                <div
+                  className="articleBody"
+                  dangerouslySetInnerHTML={{
+                    __html: getTranslated(
+                      locale,
+                      post.projectCustomFields.bodyMn,
+                      post.projectCustomFields.body
+                    ),
+                  }}
+                ></div>
+              </div>
             </div>
           </div>
         </div>

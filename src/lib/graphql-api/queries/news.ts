@@ -115,14 +115,14 @@ export async function getLatestNewsByLanguage(): Promise<{
       const lang = getLanguage(news);
       return lang === "eng" || lang === "both";
     })
-    .slice(0, 4);
+    .slice(0, 5);
 
   const mongolianNews = sortedNews
     .filter((news) => {
       const lang = getLanguage(news);
       return lang === "mn" || lang === "both";
     })
-    .slice(0, 4);
+    .slice(0, 5);
 
   return {
     english: englishNews,

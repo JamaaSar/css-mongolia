@@ -1,4 +1,4 @@
-exports.id=308,exports.ids=[308],exports.modules={7382:(a,b,c)=>{"use strict";c.d(b,{N_:()=>f});var d=c(88264);let e=(0,c(18069).A)({locales:["mn","en"],defaultLocale:"mn",localeDetection:!1}),{Link:f,redirect:g,usePathname:h,useRouter:i,getPathname:j}=(0,d.A)(e)},21197:(a,b,c)=>{"use strict";c.d(b,{a8:()=>g,rE:()=>e,sV:()=>f});var d=c(45647);async function e(){return(await (0,d.f)(`
+exports.id=308,exports.ids=[308],exports.modules={7382:(a,b,c)=>{"use strict";c.d(b,{N_:()=>f});var d=c(65870);let e=(0,c(18069).A)({locales:["mn","en"],defaultLocale:"mn",localeDetection:!1}),{Link:f,redirect:g,usePathname:h,useRouter:i,getPathname:j}=(0,d.A)(e)},21197:(a,b,c)=>{"use strict";c.d(b,{a8:()=>g,rE:()=>e,sV:()=>f});var d=c(45647);async function e(){return(await (0,d.f)(`
     query homePageSettingsQuery {
       homePageSettings {
         homePageSetting{

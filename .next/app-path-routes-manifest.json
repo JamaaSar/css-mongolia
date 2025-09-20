@@ -1,13 +1,13 @@
 {
-  "/_not-found/page": "/_not-found",
   "/favicon.ico/route": "/favicon.ico",
+  "/_not-found/page": "/_not-found",
   "/[locale]/news/[slug]/page": "/[locale]/news/[slug]",
-  "/[locale]/about-us/page": "/[locale]/about-us",
   "/[locale]/news/page": "/[locale]/news",
-  "/[locale]/project/[slug]/page": "/[locale]/project/[slug]",
-  "/[locale]/project/page": "/[locale]/project",
-  "/[locale]/resource/[slug]/page": "/[locale]/resource/[slug]",
   "/[locale]/contact-us/page": "/[locale]/contact-us",
+  "/[locale]/about-us/page": "/[locale]/about-us",
   "/[locale]/page": "/[locale]",
-  "/[locale]/resource/page": "/[locale]/resource"
+  "/[locale]/project/page": "/[locale]/project",
+  "/[locale]/project/[slug]/page": "/[locale]/project/[slug]",
+  "/[locale]/resource/page": "/[locale]/resource",
+  "/[locale]/resource/[slug]/page": "/[locale]/resource/[slug]"
 }

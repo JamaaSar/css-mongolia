@@ -1,1 +1,0 @@
-"use strict";exports.id=368,exports.ids=[368],exports.modules={87368:a=>{a.exports=JSON.parse('{"HomePage":{"title":"Welcome to Our Website","subtitle":"We create amazing things!","website":"My Website"},"menu":{"homepage":"Home","newspage":"News","project":"Project","resource":"Resource","about-us":"About us","contact-us":"Contact us"},"see-more":"see more"}')}};

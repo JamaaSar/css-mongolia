@@ -41,7 +41,6 @@ export default function MembersPage({ title, members, locale }) {
           title.boardMembersExcerptMn,
           title.boardMembersExcerpt
         )}
-        marginTop={false}
       />
       <div className="grid gap-4 grid-cols-1 xl:grid-cols-2 ">
         {boardMembers.map((data: Member) => (

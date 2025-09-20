@@ -52,7 +52,7 @@ export default async function NewsPostPage({ params }) {
               <img
                 src={post.newsCustomFields.featuredImage.node.mediaItemUrl}
                 alt="featured"
-                className="m-auto"
+                className="mx-auto my-4"
               />
 
               <div

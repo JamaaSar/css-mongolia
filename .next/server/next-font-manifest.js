@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/Users/jamaasaranbat/miniih/css-mongolia-front-end/src/app/[locale]/layout":["static/media/47cbc4e2adbc5db9-s.p.woff2","static/media/0a86735c6520d94f-s.p.woff2"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';

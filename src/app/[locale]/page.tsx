@@ -36,7 +36,7 @@ export default async function HomePage({ params }) {
   return (
     <div>
       <Banner banners={data.banners} />
-      <div className="relative mt-10 sm:mt-20 css-home-container 2xl:container m-auto">
+      <div className="relative mt-6 sm:mt-0 css-home-container 2xl:container m-auto">
         <H1
           title={getTranslated(locale, data.titleMn, data.title)}
           descriptionHtml={getTranslated(locale, data.excerptMn, data.excerpt)}

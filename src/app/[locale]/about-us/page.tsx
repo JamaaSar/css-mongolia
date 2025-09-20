@@ -25,7 +25,7 @@ export default async function NewsPage({ params }) {
   const allMembers = members as Member[];
   return (
     <div className="css-home-container m-auto 2xl:container">
-      <div className="mt-24">
+      <div className="mt-10 lg:mt-10">
         <H1
           title={getTranslated(
             locale,

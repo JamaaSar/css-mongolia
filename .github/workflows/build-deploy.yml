@@ -1,0 +1,40 @@
+name: Build and Push for Server Deployment (Next.js + Yarn)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build Next.js App
+        run: yarn build
+
+      - name: Copy required files to ./deploy
+        run: |
+          mkdir deploy
+          cp -r .next public package.json yarn.lock next.config.js deploy/
+          # Optional: include other files your app needs to run
+          cp -r pages app components deploy/ || true
+
+      - name: Push to 'deploy' branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./deploy
+          publish_branch: deploy

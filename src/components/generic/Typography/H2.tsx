@@ -33,7 +33,7 @@ export const H2 = ({
   };
 
   return (
-    <div className={`${marginTop ? "mt-10 ls:mt-24" : ""}  mb-8`}>
+    <div className={`${marginTop ? "mt-10 lg:mt-10" : ""}  mb-8`}>
       <div className="flex gap-x-3 items-center justify-between">
         <h2 className={`font-bold rubik text-xl md:text-3xl ${className} `}>
           {title}

@@ -18,7 +18,7 @@ export const StrategySection = ({
   const locale = useLocale();
 
   return (
-    <div className="w-full  m-auto justify-center py-8">
+    <div className="w-full  m-auto justify-center pt-8">
       <div className="flex flex-col flex-wrap sm:flex-row gap-4 m-auto place-content-center items-center">
         {missionVisionValues.vision && (
           <StrategyCard

@@ -75,6 +75,7 @@ export async function getNewsFull(
         dateGmt
         newsCustomFields {
           title
+          newsLanguage
           titleMn
           body
           bodyMn

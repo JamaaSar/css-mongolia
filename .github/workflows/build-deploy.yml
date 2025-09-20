@@ -23,6 +23,8 @@ jobs:
         run: yarn install
 
       - name: Build Next.js App
+        env:
+          WORDPRESS_API_URL: ${{ secrets.WORDPRESS_API_URL }}
         run: yarn build
 
       - name: Copy required files to ./deploy
